@@ -1,0 +1,49 @@
+<div class="navbar">
+  <a href="{{ url_for('Home')}}">Home</a>
+  <div class="dropdown">
+  <button class="dropbtn">Character Creation
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+      <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+      <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+      <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+      <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+      <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+      <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+  </div>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">Creating Abilities
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+    <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+    <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+  </div>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">Core Game Rules
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+      <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+      <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+      <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+      <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+  </div>
+  </div>
+  <a href="{{ url_for('Actions')}}">Actions</a>
+  <a href="{{ url_for('Conditions')}}">Conditions</a>
+  <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+  <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+
+<form method="POST" action="{{ url_for('search')}}" class="d-flex">
+  {{ form.hidden_tag() }}
+  <input class="form-control me-2" type="search"
+  aria-label="Search", name="searched">
+  <button class="btn btn-outline-seconday" type="submit">
+  Search</button>
+</form>
+</div>

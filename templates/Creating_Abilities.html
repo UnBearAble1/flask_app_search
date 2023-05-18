@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Abilities</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Character Creation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+            <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+            <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+            <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+            <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+            <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+        </div>
+        </div>
+        <a class = "active" href="{{ url_for('Creating_Abilities')}}">Creating Abilities</a>
+        <div class="dropdown">
+        <button class="dropbtn">Core Game Rules
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+          <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+          <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+          <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+          <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+          <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+          <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+          <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+        </div>
+        </div>
+        <a href="{{ url_for('Conditions')}}">Conditions</a>
+        <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+    </div>
+
+
+    <div class="sidenav">
+        <p>Creating Abilities</p>
+        <a href="#Build Points, Base and Mod">Build Points, Base and Mod</a>
+        <a href="#Activation and Duration">Activation and Duration</a>
+        <button class="dropdown-btn">Building an Ability
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="#Ability Traits">Ability Traits</a>
+            <a href="#Combining Effects">Combining Effects</a>
+            <a href="#Variable Abilities">Variable Abilities</a>
+          </div>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </div>
+<div class="a main">
+
+    <a name="Creating Abilities"><h1 style="padding-top: 48px; margin-top: -48px;">Creating Abilities</h1></a>
+
+    <p>You will hear two terms used when describing abilities: <b>Ability</b> and <b>Effect</b>. When designing an ability, you are actually selecting one or more effects (things that the ability can do). Each effect has its own rules and limitations, so creating a combined ability requires a bit of holistic thought in how they all mesh together. We'll explain more about that process later.</p>
+    <p>All Effects have two things that bridle their power: Their Base Limit and their Build Point Cost.</p>
+
+    <a name="Build Points, Base and Mod"><h2 style="padding-top: 48px; margin-top: -48px;">Build Points, Base and Mod</h2></a>
+
+<h3>Build Points</h3>
+<p>Your character begins play with 70 Build Points worth of abilities, and gains more Build Points as the game progresses. Each ability costs a number of build points equal to the combination of its Base and Mod.</p>
+<h3>Base and Mod</h3>
+<p>When figuring out how many Build Points an effect costs, you combine the two numbers for Base and Mod together. Mod can go into the negative, which reduces the cost. So an ability with a Base of 8, and a Mod of +3, would have a total Build Point cost of 11, but an ability with a Base of 8 and a Mod of -6 would have a total Build Point cost of 2.</p>
+<p>Typically Mod goes up when you add boosts or improvement modifications to an effect, and goes down when you add limits or detrimental modifications to an effect.</p>
+
+<h3>Base Limits</h3>
+
+<p>If an ability has a Base number (almost all of them do), they must also have a Base Limit. A Base Limit is simply a limit you select, which must have a Limit number that matches or exceeds the Base of your effect. For example, if you have an effect that has a Base of 6, you must select a limit with a Limit Rank of -6 or more. The amount of Limit Rank that matches your Base from your Base Limit doesn't actually reduce the Mod of your ability, but any excess does.</p>
+<p>Example: You have an ability with a Base of 6, and you give it a Base Limit with a Limit Rank of -8, then not only does this count as the necessary Base Limit to have that ability, but also gives your ability a total starting Mod of -2.</p>
+<p>It's important to remember that you MUST have a SINGLE Base Limit that at least matches the Base of your ability. This can never be bought off, it is always there for game balance.</p>
+<p>It is possible that an effect may only have a Mod cost (typically represented as a Mod number without a plus or minus, such as Mod: 5). These don't require Base Limits.</p>
+
+<a name="Activation and Duration"><h2 style="padding-top: 48px; margin-top: -48px;">Activation and Duration</h2></a>
+<p>Some ability effects will have either the “Activation: Duration” or “Activation: Instant” keywords. These effects must be activated using actions or activities in order to be used. Activation Duration effects persist throughout the entire listed duration, and Activation Instant ones immediately have an instantaneous effect. Activating an effect is obvious to observers, as is any aspect of an activated ability that requires an action to perform. If you really wish to use your activated abilities surreptitiously, you’ll need to get the “concealable” boost. </p>
+<p>Unless otherwise specified, activated abilities have the following associated times (depending on when you activate them):</p>
+<ul>
+    <li>Encounter Effect:  2 action activation,  1 minute duration</li>
+    <li>Exploration Effect: 10 minute activation, 1 hour duration</li>
+    <li>Downtime Effect: 1 hour activation, 1 day duration</li>
+</ul>
+
+<p>Effects that do not have either Activation keyword are considered to be "always on," though you could select the "Requires Activation" limit to make them require an activation.</p>
+
+<a name="Building an Ability"><h2 style="padding-top: 48px; margin-top: -48px;">Building an Ability</h2></a>
+<p>When you design an ability, you are ultimately selecting and customizing multiple effects. You can combine as many effects as you wish into a single ability, but there a few things to keep in mind:</p>
+<ul>
+    <li>If any of your effects require activation, then the entire ability is active only once it is activated, and the duration is equal to the shortest duration of any of your effects. You can apply Limits to effects that have their durations stunted this way in order to reflect the actual duration limitation, reducing their mod.</li>
+    <li>If you have more than one effect that requires activation, your total action cost for activating the ability is the full combined number of actions of the ability. If you want to avoid this, see the rules below for "Combining Multiple Abilities that Require Activation."</li>
+    <li>Some effects you encounter (such as dispel magic) will shut down your entire ability, not just one part of it - so make sure it is worth combining numerous effects into a single ability.</li>
+</ul>
+
+<a name="Ability Traits"><h3 style="padding-top: 48px; margin-top: -48px;">Ability Traits</h3></a>
+<p>Your ability will always have at least one trait: either Magical or Mechanical. This is known as your ability's 'source' and will determine how it interacts with the game world. Your GM may introduce other traits relevant to their setting, such as psionic, ki, or spirit.</p>
+<p>Magical abilities are those that have supernatural origins - specifically drawing power from other planes of existence. If your ability is magical, also select a trait for what tradition it is associated with: Arcane, Divine, or Primal.</p>
+<p>Mechanical abilities are those that originate from raw skill, physical prowess, or biological functions. Alchemical items, even though they are infused with magic, technically fall within this bucket, though they also have the Alchemical trait.</p>
+<p>Your ability will also have any other Traits that come from your effects, limits or boosts.</p>
+
+<a name="Combining Effects"><h3 style="padding-top: 48px; margin-top: -48px;">Combining Effects</h3></a>
+<p>As mentioned earlier, you can combine effects, but they are all activated simultaneously and have durations equal to the shortest duration of any effect. But there are a few more rules you should be aware of if you want to create combined abilities.</p>
+<p>You can combine multiple effects together in such a way that they are each activated as a combined action. This has the following rules:</p>
+<ul>
+    <li>Only applicable for effects that require some type of activation (either because they started with an activation keyword or you gave them the activation limit.)</li>
+    <li>Can include combining a special attack with non-attack abilities</li>
+    <li>Effects must each have the appropriate (typically the same) range and area to all target the same creatures, objects, or area</li>
+    <li>You can’t stack multiple sources of damage in the same instance (but you can have different damage instances trigger on different success results - see Variable Results below)</li>
+</ul>
+
+<p>Combining activated effects is technically either a "limit" or a "boost" that applies to the overall cost at the end of your normal cost calculations above. The price depends on how many total actions you are saving using this combined ability. You cannot save more than two actions using this ability.</p>
+
+<ul>
+    <li>No saved actions, but each effect takes at least one action, and the effects may only be used all at once (Limit -3)</li>
+    <li>1 Action or reaction saved, and the effects may only be used all at once  (Mod +6)</li>
+    <li>1 Action or reaction saved, and you can toggle ‘off’ effects at your discretion (Mod +10)</li>
+    <li>2 Actions saved, and the effects may only be used all at once (Mod +14)</li>
+    <li>2 Actions saved, and you can toggle ‘off’ effects at your discretion  (Mod +20)</li>
+</ul>
+
+<p>When applying this boost to multiple effects to link them, each effect uses all of its own limits, boosts, range and targeting criteria, as well as the full rules listed within the effect. Typically, all effects must have the same target (and must therefore have the same range, target applicability, etc,) though it is possible to have a combined ability that affects both you and a target or group of targets in two separate ways (for example, you may create an ability that deals necrotic damage to a group of enemies while simultaneously granting you temporary hit points as you absorb their health.) The GM has the final say on what makes sense. </p>
+
+<h3>Special Considerations:</h3>
+<ul>
+    <li>Other Limits and Boosts:  Unless you chose the option to allow your abilities to still be operated independently, you usually must select the same limits and boosts for each feat linked in this chain if they should apply for the new combined ability. You get the savings or cost increase to each effect. Typically, if you have the Limited Frequency limit on them, you should also take the variant on that for "Linked Frequency."</li>
+    <li>You can take the "Linked Alternate Effect" limit on these feats, but the entire group would be a linked alternate effect with another feat or group of feats.</li>
+    <li>Focus Spells or other Resource Costs:  Unless you chose the option to allow your effects to still be operated independently, combine the total focus point or other resource costs for all of the effects. If you cannot opt to toggle off effects, then in order to use your ability at all you must be able to pay the entirety of its resource cost to use. </li>
+</ul>
+
+<a name="Variable Abilities"><h2 style="padding-top: 48px; margin-top: -48px;">Variable Abilities</h2></a>
+<p>Commonly, you'll want to create abilities that have variable effects based on different criteria. The most common two examples are abilities that have variable results based on a roll you make (such as an attack roll) or variable results based on how many resources you are willing to spend (such as an ability that scales up damage if you spend extra actions.) These two options are broken down here: </p>
+
+<h3>Variable Effects Based on Rolls:</h3>
+<p>It is common for abilities that require checks of some kind (attacks, or activated effects with the ‘requires skill roll’ limit) to have varying results based on how well you roll. For these kinds of abilities, you design each independently based on each result (typically critical success, success, and occasionally failure,) but you only pay for the most expensive result effect. You also don’t need to meet Base Limit requirements for the lesser results, as long as their sources (boosts or effects) are mirrored on the greater results. If they aren’t, you still need to match the Base Limit  with an appropriate limit.</p>
+<ul>
+    <li>They must all have appropriately similar targeting ranges, area, etc in order to affect the same creatures, objects or area.</li>
+    <li>Better dice results yield the most powerful results by default (consult your GM if you want some other option) </li>
+    <li>The “requires skill check” limit doesn’t allow for results on a failure, but Special Attack does.</li>
+    <li>Your results should be variations of the same theme, such as damage variance by result, or ‘tracks’ of effects - such as Frightened 1 < Frightened 2 < Frightened 3 and Fleeing. Your GM will have final determination if your combination of effects is appropriately themed.</li>
+</ul>
+
+<h3>Variable Effects Based on Limits and Resources</h3>
+<p>You can also design an ability to have effects vary based on the requirements you must meet or resources you spend. Typically, these resources are: number of actions spent, number of focus points spent, components used/spent. As with variable results, you only pay for the most expensive variation. The rules are as follows:</p>
+<ul>
+    <li>Your results should be variations of the same theme, such as damage variance based on actions used, or ‘tracks’ of effects - such as Frightened 1 < Frightened 2 < Frightened 3 and Fleeing based on increasingly more expensive resource use. Your GM will have final determination if your combination of effects is appropriately themed.</li>
+    <li>You can only have a combination of 2 vectors of change, whether those be components/requirements, or actual effects. For example, you could have an attack that increases the area based on the number of actions used. If you want more vectors of change, this becomes a boost with a price increase of Mod +6 for the most expensive effect for each vector variation. Bear in mind, not all resource costs are created equal, and you may end up changing what the most expensive effect in your options are by tinkering with these things (therefore adjusting the cost for the entire ability is).</li>
+</ul>
+
+<h3>Variable Limits: Either/Or Limits</h3>
+<p>In some cases you will want to create an ability with a little more control over which limit is affecting you at any time, effectively creating an ‘either/or’ situation. For example, you could create an ability that has the Situational Limit, stating that it only works in total darkness (Limit -10) -- but, you say that if you aren’t in total darkness, you can still use the ability, but it costs a focus point (Limit: -8).</p>
+<p>In this case, because it increases the versatility of the ability, you use the worse Limit value (in this case, Limit -8.)</p>
+<p>You can only have two options for these kinds of 'either/or' situations, and one cannot reduce the restrictions of the other in ANY WAY. (like a limit that says 'only works at night' and another that says 'only works in the day.') </p>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html>

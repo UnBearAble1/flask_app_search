@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creation</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <a class="active" href="{{ url_for('Character_Creation')}}#Character Creation">Character Creation</a>
+        <div class="dropdown">
+        <button class="dropbtn">Creating Abilities
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+          </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Core Game Rules
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+          <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+          <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+          <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+          <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+          <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+          <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+          <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+        </div>
+        </div>
+        <a href="{{ url_for('Conditions')}}">Conditions</a>
+        <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+    </div>
+<div class="sidenav">
+    <p>Character Creation</p>
+  <a href="#">Top of Page</a>
+  <a href="#Base">Step One: Pick your Base</a>
+  <button class="dropdown-btn">Step Two: Select Skills and Languages
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Administration">Administration</a>
+    <a href="#Arcana">Arcana</a>
+    <a href="#Athletics">Athletics</a>
+    <a href="#Coordination">Coordination</a>
+    <a href="#Computers (Modern)">Computers (Modern)</a>
+    <a href="#Culture">Culture</a>
+    <a href="#Deception">Deception</a>
+    <a href="#Diplomacy">Diplomacy</a>
+    <a href="#Empathy">Empathy</a>
+    <a href="#Enchantment">Enchantment</a>
+    <a href="#Engineering">Engineering</a>
+    <a href="#Investigation">Investigation</a>
+    <a href="#Intimidation">Intimidation</a>
+    <a href="#Life Sciences">Life Sciences</a>
+    <a href="#Medicine">Medicine</a>
+    <a href="#Might">Might</a>
+    <a href="#Perception">Perception</a>
+    <a href="#Physical Sciences">Physical Sciences</a>
+    <a href="#Piloting">Piloting</a>
+    <a href="#Stealth">Stealth</a>
+    <a href="#Streetwise">Streetwise</a>
+    <a href="#Survival">Survival</a>
+    <a href="#Thievery">Thievery</a>
+    <a href="#Lore, Profession, or Art">Lore, Profession, or Art</a>
+  </div>
+  <a href="#Adept">Step Three: Adept Statistics and Choices (if any)</a>
+  <a href="#Abilities">Step Four: Purchase your Abilities</a>
+  <a href="#Complications">Step Five: Select your Complications (optional)</a>
+  <a href="#Gear">Step Six: Design and select your gear</a>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+
+<div class="a main">
+<h1>Character Creation</h1>
+<p>Before making your character, it is good to understand what this game is and is not, especially since the game is largely based on popular fantasy games where a few of these things may not be true:</p>
+<ol>
+  <li>This game is about badass heroes on a journey of exploration, impacting the world around them, not about the ever-increasing power creep of a group of weakish heroes as they rise to god-like ability. It assumes your characters are already very capable, maybe even legendary in their field, and your character's growth will be horizontal not vertical. You are playing the equivalents Aragorn from Lord of the Rings, Lan and Moiraine from Wheel of Time, Elric of Melniboné from the Eternal Champion books, or Roland of Gilead from the Dark Tower series. </li>
+  <li>The game's "grit" is designed to feel like a book, TV series, or movie. Anywhere we could, we tried to take out elements of this game's roots that made it feel too much like you were controlling an "toon". Combat is supposed to be fast and violent, and often leave characters with serious wounds to tend to.</li>
+  <li>This game is almost entirely about pure customization, with limits and levers. The game design is to create a platform in which Game Masters or Players can create their own special abilities from scratch, encouraging them to provide their own limitations and restrictions. It does not promise “you can make anything,” because that implies scope and power are within the player’s control, only “you can make almost anything, but it will be limited by the scope of power intended for the characters.” </li>
+</ol>
+
+<p><b>Characters are made up of 3 to 6 elements:</b></p>
+<a name="Base"><h2 style="padding-top: 48px; margin-top: -48px;">Step One: Pick your Base</h2></a>
+  <p><b>Warrior:</b> You do not dabble in the traditional Spellcasting at all.</p>
+  <ul>
+      <li>80 Hit Points</li>
+      <li>Serious Wound Threshold: 25</li>
+      <li>Grievous Wound Threshold: 40</li>
+      <li>Warrior armor and weapon traits</li>
+  </ul>
+</br>
+  <p><b>Hybrid:</b> You are a "gish", a hybrid between a warrior and a Spellcaster.</p>
+  <ul>
+      <li>70 Hit Points </li>
+      <li>Serious Wound Threshold: 20</li>
+      <li>Grievous Wound Threshold: 35</li>
+      <li>Hybrid armor and weapon traits</li>
+      <li>Hybrid Spellcasting benefits </li>
+  </ul>
+</br>
+    <p><b>Adept:</b> You are fully dedicated to Spellcasting.</p>
+<ul>
+    <li>60 Hit Points </li>
+    <li>Serious Wound Threshold: 15</li>
+    <li>Grievous Wound Threshold: 30</li>
+    <li>Adept armor and weapon traits</li>
+    <li>Adept Spellcasting benefits </li>
+</ul>
+
+<a name="Skills and Language"><h2 style="padding-top: 48px; margin-top: -48px;">Step Two: Select Skills and Languages</h2></a>
+<p>Your character can speak <b>'common', plus one additional language</b>, and select a <b>single lore, profession or art skill to specialize in</b>. All characters are also considered specialized in the Perception skill and all Defense types (if you wish to be weaker in these categories, consider taking complications related to them.) </p>
+<p>You also pick <b>seven skills</b> that your character specializes in. There are no ranks or levels to these skills, you are either specialized or not. If you aren't specialized in a skill when making a check versus the difficulty challenge set out by the GM, treat your result as one category worse than you roll. You can also pick new skills using your ability points as well, shown later.</p>
+
+<a name="Administration">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Administration</h3></a>
+    <p>Knowledge of political, legal, and financial systems and institutions.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge</a> About matters political, legal, financial or bureaucratic</li>
+        <li><a href="{{ url_for('Actions')}}#Arrange a Meeting">Arrange a Meeting</a> With politicians, legal or government officers and employees, corporate executives and the like. </li>
+        <li><a href="{{ url_for('Actions')}}#Gather Information">Gather Information</a> About matters political, legal, financial or bureaucratic.</li>
+      </ul>
+    </ul>
+
+<a name="Arcana">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Arcana</h3></a>
+    <p>You are educated in the fields of magic, magical creatures, the planes, and spellcasting.</p>
+    <ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Decipher Writing">Decipher Writing</a> about arcane theory.</li>
+        <li><a href="{{ url_for('Actions')}}#Identify Magic">Identify Magic:</a> You can identify spells being cast or magical effects</li>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge</a> about alchemical theory, arcane symbols, deities, magic traditions, the planes, religious traditions and symbols, and related topics. Includes constructs with the magical subtype, dragons, fey, magical beasts, outsiders, and undead.</li>
+      </ul>
+    </ul>
+
+<a name="Coordination">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Coordination</h3></a>
+    <p>Measures your ability to perform tasks requiring dexterity and grace.</p>
+    <ul>
+      <li>Untrained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Balance">Balance:</a> You move across a narrow surface or uneven ground, attempting an Acrobatics check against its Balance DC</li>
+        <li><a href="{{ url_for('Actions')}}#Trip">Trip:</a> You try to knock a creature to the ground.</li>
+        <li><a href="{{ url_for('Actions')}}#Tumble Away">Tumble Away:</a> You can try to move out of the threat range of enemies</li>
+        <li><a href="{{ url_for('Actions')}}#Tumble Through">Tumble Through:</a> You can try to move through the space of one enemy.</li>
+      </ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Disarm">Disarm:</a> You try to knock something out of a creature’s grasp.</li>
+        <li><a href="{{ url_for('Actions')}}#Maneuver in Flight">Maneuver in Flight:</a> You try a difficult maneuver while flying.</li>
+        <li><a href="{{ url_for('Actions')}}#Squeeze">Squeeze:</a> You contort yourself to squeeze through a space so small you can barely fit through. </li>
+      </ul>
+    </ul>
+
+<a name="Computers (Modern)">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Computers (Modern)</h3></a>
+    <p>You can operate, manipulate, and hack into computer systems.</p>
+    <ul>
+      <li>Untrained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Navigate Unsecured System">Navigate Unsecured System:</a> You can use Computers to access an unfamiliar, alien, or obscure unsecured computer system’s most basic functions. Standard use of standard computers typically don't require checks</li>
+      </ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li>Craft Computer Components: You can custom build computers, software or Daemons using the crafting rules.</li>
+        <li><a href="{{ url_for('Actions')}}#Create Electronic Forgery">Create Electronic Forgery:</a> You can use Computers to forge official electronic documents (like official electronic mail, secured document files, or deepfakes) or credentials (like passwords, key cards or biometric data). </li>
+        <li>Detect Electronic Forgery: When observing an electronic forgery, you make a roll versus your computer skill to detect it as such.</li>
+        <li><a href="{{ url_for('Actions')}}#Infiltrate Secured System">Infiltrate Secured System:</a> You can use Computers to hack a computer system to which you don’t already have access. This action is composed of multiple levels.</li>
+        <li><a href="{{ url_for('Actions')}}#Avoid System Detection">Avoid System Detection:</a> If a system is on alert, you can avoid detection using the Computers skill. </li>
+        <li><a href="{{ url_for('Actions')}}#Bypass Countermeasures">Bypass Countermeasures:</a> Whether it's a static trap or an active countermeasure, you can use the Computers skill to avoid the consequences. </li>
+      </ul>
+    </ul>
+
+<a name="Culture">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Culture</h3></a>
+    <p>Knowledge of high society, foreign organizations, religions, and other cultural institutions and histories.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge:</a> About the culture of a society, including cultural or religious organizations and figures, or those of cultural elites.</li>
+        <li><a href="{{ url_for('Actions')}}#Arrange a Meeting">Arrange a Meeting:</a> With leaders or members of high society, religious or cultural institutions. </li>
+        <li><a href="{{ url_for('Actions')}}#Gather Information">Gather Information:</a> About matters of high society, foreign organizations, religions, or other cultural institutions and histories.</li>
+      </ul>
+    </ul>
+
+<a name="Deception">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Deception</h3></a>
+    <p>Can be used to trick and mislead others using disguises, lies, and other forms of subterfuge.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Create a Diversion">Create a Diversion:</a> With a gesture, a trick, or some distracting words, you can create a diversion that draws creatures' attention elsewhere.</li>
+        <li><a href="{{ url_for('Actions')}}#Impersonate">Impersonate:</a> You create a disguise to pass yourself off as someone or something you are not.</li>
+        <li><a href="{{ url_for('Actions')}}#Lie">Lie:</a> You try to fool someone with an untruth.</li>
+        <li><a href="{{ url_for('Actions')}}#Persuade">Persuade:</a> Deception is one of the three approaches when you attempt to persuade someone of a truth or to taking your side.</li>
+      </ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Feint">Feint:</a> With a misleading flourish, you leave an opponent unprepared for your real attack.</li>
+      </ul>
+    </ul>
+
+<a name="Diplomacy">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Diplomacy</h3></a>
+    <p>Can be used to influence others through negotiation and flattery.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Gather Information">Gather Information:</a> You canvass local markets, taverns, and gathering places in an attempt to learn about a specific individual or topic.</li>
+        <li><a href="{{ url_for('Actions')}}#Make an Impression">Make an Impression:</a> You seek to make a good impression on someone to make them temporarily agreeable. </li>
+        <li><a href="{{ url_for('Actions')}}#Persuade">Persuade:</a> Diplomacy is one of the three approaches when you attempt to persuade someone of a truth or to taking your side.</li>
+        <li><a href="{{ url_for('Actions')}}#Request">Request:</a> You can make a request of a creature that’s friendly or helpful to you.</li>
+      </ul>
+    </ul>
+
+<a name="Empathy">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Empathy</h3></a>
+    <p>Used to read a person's body language</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Sense Motive">Sense Motive:</a> You try to tell whether a creature's behavior is abnormal.</li>
+        <li><a href="{{ url_for('Actions')}}#Discover Motivations">Discover Motivations:</a> You watch or study an NPC to learn more about that NPC’s preferences.</li>
+    </ul>
+    </ul>
+
+<a name="Enchantment">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Enchantment</h3></a>
+    <p>You can identify, build, repair, or disable magical devices.</p>
+    <ul>
+      <li>Trained Action</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Disable Device">Disable Device</a> on magical traps and arcane locks.</li>
+        <li>Craft Magic Item: You can craft magical items using the crafting rules.</li>
+        <li><a href="{{ url_for('Actions')}}#Identify Magic">Identify Magic:</a> You can identify magic items. </li>
+        <li><a href="{{ url_for('Actions')}}#Repair">Repair:</a> You can repair magical items.</li>
+      </ul>
+    </ul>
+
+<a name="Engineering">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Engineering</h3></a>
+    <p>You can identify, build, repair, or disable technological devices.</p>
+    <ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Configure Explosives">Configure Explosives:</a> You can use Engineering to configure an explosive device.</li>
+        <li>Craft Tech Item: You can craft technological items using the crafting rules.</li>
+        <li><a href="{{ url_for('Actions')}}#Disable Tech Device">Disable Tech Device:</a> You can use Engineering to disable a lock, a trap, or a mechanical or technological device, or to disarm an explosive. </li>
+        <li><a href="{{ url_for('Actions')}}#Identify Technology">Identify Technology:</a> You can use Engineering to identify the nature of technological devices.</li>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge:</a> About technology or structures, including assessing their structural integrity or weak spots.</li>
+        <li><a href="{{ url_for('Actions')}}#Repair">Repair:</a> You can repair equipment, technology, or structures.</li>
+        <li><a href="{{ url_for('Actions')}}#Jury Rig">Jury Rig:</a> You can cause technology to behave in a way it wasn't intended to.</li>
+      </ul>
+    </ul>
+
+<a name="Investigation">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Investigation</h3></a>
+    <p>Used to examine a location for clues, or assess those clues</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Reconstruct the Scene">Reconstruct the Scene:</a> You study a scene or an item to gather clues and get a sense of what happened recently involving it.</li>
+        <li><a href="{{ url_for('Actions')}}#Examine Clue">Examine Clue:</a> You study a clue to determine if it is important, and possibly why.</li>
+        <li><a href="{{ url_for('Actions')}}#Connect the Dots">Connect the Dots:</a> You compare two or more clues to understand if they are related.</li>
+      </ul>
+    </ul>
+
+<a name="Intimidation">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Intimidation</h3></a>
+    <p>Used to bend others to your will using threats.</p>
+    <ul>
+      <li>Untrained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Coerce">Coerce:</a> You attempt to bully a creature into doing what you want.</li>
+        <li><a href="{{ url_for('Actions')}}#Demoralize">Demoralize:</a> You can shake an enemy's resolve.</li>
+        <li><a href="{{ url_for('Actions')}}#Persuade">Persuade:</a> Intimidation is one of the three approaches when you attempt to persuade someone of a truth or to taking your side.</li>
+      </ul>
+    </ul>
+
+<a name="Life Sciences">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Life Sciences</h3></a>
+    <p>The scientific study of living things, from the smallest organisms to the largest biological systems.</p>
+    <ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li>Craft Drug, Poison, Food or Medicine: You can craft drugs, poisons, food or medicinal items using the crafting rules. </li>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge:</a> About bioengineering, biology, botany, ecology, genetics, xenobiology, zoology, and other fields of biological science, as well as aberrations, animals, humanoids, monstrous humanoids, oozes, and plant creatures. </li>
+      </ul>
+    </ul>
+
+<a name="Medicine">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Medicine</h3></a>
+    <p>Used to patch up wounds and help people recover from diseases and poisons.</p>
+    <ul>
+      <li>Untrained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge</a> about diseases, injuries, poisons, and other ailments. You can use this to perform forensic examinations if you spend 10 minutes (or more, as determined by the GM) checking for evidence such as wound patterns. This is most useful when determining how a body was injured or killed.</li>
+        <li><a href="{{ url_for('Actions')}}#Stabilize Injuries">Stabilize Injuries:</a> You perform first aid on an adjacent creature that is dying or bleeding.</li>
+      </ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Treat Disease">Treat Disease:</a> You treat a patient to prevent the spread of disease.</li>
+        <li><a href="{{ url_for('Actions')}}#Treat Poison">Treat Poison:</a> You treat a patient to prevent the spread of poison.</li>
+        <li><a href="{{ url_for('Actions')}}#Administer First Aid">Administer First Aid:</a> You treat a patient to try and recover hit points.</li>
+        <li><a href="{{ url_for('Actions')}}#Perform Surgery">Perform Surgery:</a> You attempt to remove a specific injury.</li>
+      </ul>
+    </ul>
+
+<a name="Might">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Might</h3></a>
+    <p>Measures your ability to perform tasks requiring physical strength and force.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Force Open">Force Open:</a> Using your body, a lever, or some other tool, you attempt to forcefully open a door, window, container or heavy gate.</li>
+        <li><a href="{{ url_for('Actions')}}#Power Lift">Power Lift:</a> You attempt to lift more than your normal maximum.</li>
+        <li><a href="{{ url_for('Actions')}}#Shove">Shove:</a> You push a creature away from you</li>
+      </ul>
+      <li>Being specialized in Might doubles your <a href="{{ url_for('Other_Rules')}}#Bulk Limits and Lifting">Bulk limits</a> .</li>
+    </ul>
+
+<a name="Perception">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Perception</h3></a>
+    <p>Measures your ability to be aware of your environment. <b>Every creature is specialized in Perception</b>, which works with and is limited by a creature's senses. Whenever you need to attempt a check based on your awareness, you'll attempt a Perception check.</p>
+    <ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Seek">Seek:</a> You actively perform a quick scan of the environment to find anything hidden.</li>
+        <li><a href="{{ url_for('Actions')}}#Search">Search:</a> You spend time carefully studying the environment to find anything hidden.</li>
+       </ul>
+    </ul>
+
+<a name="Physical Sciences">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Physical Sciences</h3></a>
+    <p>The scientific study of non-living systems, from the tiniest atoms to the largest celestial bodies.</p>
+    <ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li>Craft Drug, Poison, or Medicine: You can craft drugs, poisons, food or medicinal items using the crafting rules.</li>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge:</a> About astronomy, chemistry, climatology, geography, geology, meteorology, oceanography, physics, and other fields of natural science.</li>
+      </ul>
+    </ul>
+
+<a name="Piloting">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Piloting</h3></a>
+    <p>You know how to drive vehicles, ride mounts, pilot hexdrive ships, and navigate.</p>
+    <ul>
+      <li>Trained Actions:</li>
+      <ul>
+        <li>Navigate: You can use Piloting to navigate or astrogate. This lets you direct your vehicle or ship in your desired heading and to plot longer courses.</li>
+        <li>Pilot a Hexdrive ship: you use your Piloting skill to maneuver, attempt stunts, and otherwise fly the Hexdrive ship.</li>
+        <li>Drive: you attempt Piloting checks to safely race a vehicle or mount at full speed, pull off maneuvers, engage in vehicular combat, and maneuver in a chase.</li>
+      </ul>
+    </ul>
+
+<a name="Stealth">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Stealth</h3></a>
+    <p>Measures your skill at avoiding detection, allowing you to slip past foes, hide, or conceal an item.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Conceal an Object">Conceal an Object:</a> You hide a small object on your person (such as a weapon of light Bulk).</li>
+        <li><a href="{{ url_for('Actions')}}#Hide">Hide:</a> You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed.</li>
+        <li><a href="{{ url_for('Actions')}}#Sneak">Sneak:</a> You can attempt to move to another place while becoming or staying undetected.</li>
+      </ul>
+    </ul>
+
+<a name="Streetwise">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Streetwise</h3></a>
+    <p>You are skilled at navigating urban streets and criminal organizations.</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge:</a>Recall Knowledge: About matters related to lower society and criminal organizations. </li>
+        <li><a href="{{ url_for('Actions')}}#Arrange a Meeting">Arrange a Meeting:</a> With criminals or members of lower society.</li>
+        <li><a href="{{ url_for('Actions')}}#Gather Information">Gather Information:</a> About matters related to lower society and criminal organizations.</li>
+      </ul>
+    </ul>
+
+<a name="Survival">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Survival</h3></a>
+    <p>Represents how adept you are at living in the wilderness, foraging for food and building shelter, and with training you discover the secrets of tracking and hiding your trail. </p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Subsist">Subsist</a> in the wild by foraging for food and building shelter.</li>
+        <li><a href="{{ url_for('Actions')}}#Sense Direction">Sense Direction:</a> you can stay oriented in the wild.</li>
+      </ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Cover Tracks">Cover Tracks:</a> You cover your tracks, moving up to half your travel speed.</li>
+        <li><a href="{{ url_for('Actions')}}#Track">Track:</a> You follow tracks, moving at up to half your travel speed.</li>
+      </ul>
+    </ul>
+
+<a name="Thievery">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Thievery</h3></a>
+    <p>Measures your training in a particular set of skills favored by thieves and miscreants</p>
+    <ul>
+      <li>Untrained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Palm an Object">Palm an Object:</a> You palm a small, unattended object.</li>
+        <li><a href="{{ url_for('Actions')}}#Steal">Steal:</a></li> You try to take a small object from another creature without being noticed.
+      </ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Disable Device">Disable Device:</a> This action allows you to disarm a trap or another complex device.</li>
+        <li><a href="{{ url_for('Actions')}}#Pick a Lock">Pick a Lock:</a> You attempt to open a lock without a key</li>
+      </ul>
+    </ul>
+
+<a name="Lore, Profession, or Art">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Lore, Profession, or Art</h3></a>
+    <p>Represents specialized information or artistic expression on a narrow topic. When selecting this skill, you must specify what kind of lore, profession or art your character is specialized in.</p>
+    <ul>
+      <li>Trained Actions</li>
+      <ul>
+        <li><a href="{{ url_for('Actions')}}#Recall Knowledge">Recall Knowledge</a> about the subject of your Lore skill’s subcategory.</li>
+        <li><b>Earn Income</b> by using your knowledge to practice a trade.</li>
+        <li><a href="{{ url_for('Actions')}}#Create Artwork">Create Artwork</a> (if Art)</li>
+        <li><a href="{{ url_for('Actions')}}#Perform">Perform</a> (If Performance)</li>
+      </ul>
+    </ul>
+
+<a name="Adept">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Step Three:  Adept Statistics and Choices (if any)</h2></a>
+    <p>There is currently one type of Adept: Spellcasting. If you pick either the Hybrid or Adept bases, you gain access to it. </p>
+    <p>Ultimately Adept Abilities (Spells) are created exactly like normal Abilities (See Step Four) except they are far, far cheaper, and use their own subsystems with very specific rules. Playing a character with access to Adept abilities means having a far more robust list of things you can do at the expense of being limited to a specific ruleset and having reduced hit points and weapon and armor traits.</p>
+
+<a name="Abilities">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Step Four: Purchase your Abilities</h2></a>
+
+    <p>You get 70 creation points to purchase your abilities. Click <a href="{{ url_for('Creating_Abilities')}}">here</a> for the full rules.</p>
+    <p>Abilities represent everything that makes your character special. They help further specialize you into skills, give you unique combat advantages, or even give a wide variety of uncanny powers. Think of Abilities like feats, class abilities, and super powers all rolled into one.</p>
+
+<a name="Complications">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Step Five: Select your Complications (optional)</h2></a>
+
+<p>Complications are similar to abilities, except they complicate your character's life and generate hero points that you can spend later. Though you can always get a hero point each time you roll a critical failure and suffer a consequence, Complications enable you to earn them at a much faster rate at the expense of character optimization. Consider them a reward for playing a flawed character, and an encouragement to add roleplay and complications to your character’s life. Alignment is also a complication in this game. Click here for the full rules. </p>
+
+<a name="Gear">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Step Six: Design and select your gear</h2></a>
+<p>You can customize your weapons and armor at character creation. The rules for doing so are <a href="{{ url_for('Armor_and_Weapons')}}#">here</a>.</p>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html> 

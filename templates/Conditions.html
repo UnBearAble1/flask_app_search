@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Character Creation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+            <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+            <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+            <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+            <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+            <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Creating Abilities
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+          </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Core Game Rules
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+        </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Actions
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+              <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+              <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+              <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+              <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+              <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+              <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+              <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+            </div>
+            </div>
+        <a class = "active" href="{{ url_for('Conditions')}}">Conditions</a>
+        <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+      </div>
+<div class="sidenav">
+  <p> List of Conditions</p>
+  <a href="#Blinded">Blinded</a>
+  <a href="#Broken">Broken</a>
+  <a href="#Clumsy">Clumsy</a>
+  <a href="#Confused">Confused</a>
+  <a href="#Controlled">Controlled</a>
+  <a href="#Dazzled">Dazzled</a>
+  <a href="#Deafened">Deafened</a>
+  <a href="#Doomed">Doomed</a>
+  <a href="#Drained">Drained</a>
+  <a href="#Encumbered">Encumbered</a>
+  <a href="#Enfeebled">Enfeebled</a>
+  <a href="#Fascinated">Fascinated</a>
+  <a href="#Fatigued">Fatigued</a>
+  <a href="#Flat-footed">Flat-footed</a>
+  <a href="#Fleeing">Fleeing</a>
+  <a href="#Frightened">Frightened</a>
+  <a href="#Grabbed">Grabbed</a>
+  <a href="#Hobbled">Hobbled</a>
+  <a href="#Immobilized">Immobilized</a>
+  <a href="#Paralyzed">Paralyzed</a>
+  <a href="#Petrified">Petrified</a>
+  <a href="#Prone">Prone</a>
+  <a href="#Restrained">Restrained</a>
+  <a href="#Sickened">Sickened</a>
+  <a href="#Slowed">Slowed</a>
+  <a href="#Stupefied">Stupefied</a>
+  <a href="#Stunned">Stunned</a>
+  <a href="#Tagged">Tagged</a>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+  <div class="a main">
+    <h1>Conditions</h1>
+    <a name="Blinded">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Blinded</h2>
+    </a>
+    <ul>
+        <li>You can't see. All normal terrain is difficult terrain to you. You can't detect anything using vision. You automatically critically fail Perception checks that require you to be able to see, and if vision is your only precise sense, you take a –4 status penalty to Perception checks. You are immune to visual effects. Blinded overrides dazzled.</li>
+        <li>If vision is your only precise sense, that means most creatures are hidden from you:
+        </li>
+        <ul>
+            <li>Hidden: A creature you're hidden from is flat-footed to you, and it must succeed at a DC 11 flat check when targeting you with an attack, spell, or other effect or it fails to affect you. Area effects aren't subject to this flat check.</li>
+        </ul>
+    </ul>
+
+    <a name="Broken">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Broken</h2>
+    </a>
+    <ul>
+        <li>Broken is a condition that affects objects. An object is broken when damage has reduced its Hit Points to equal or less than its Broken Threshold. A broken object can't be used for its normal function, nor does it grant bonuses— with the exception of armor. (UPDATE ARMOR RULES)</li>
+        <li>A broken item still imposes penalties and limitations normally incurred by carrying, holding, or wearing it. For example, broken armor would still impose its Dexterity modifier cap, check penalty, and so forth.</li>
+        <li>If an effect makes an item broken automatically and the item has more HP than its Broken Threshold, that effect also reduces the item's current HP to the Broken Threshold.</li>
+    </ul>
+
+    <a name="Clumsy">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Clumsy</h2>
+    <ul>
+        <li>Your movements become clumsy and inexact. Clumsy always includes a value. you take a status penalty equal to the condition value to rolls and DCs requiring physical dexterity or coordination, including Guard defense, Reflex defense, ranged attack rolls, and skill checks using Acrobatics, Stealth, and Thievery.</li>
+    </ul>
+
+    <a name="Confused">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Confused</h2>
+    </a>    <ul>
+        <li>You don't have your wits about you, and you attack wildly. You are flat-footed, you don't treat anyone as your ally (though they might still treat you as theirs), and you can't Delay, Ready, or use reactions.</li>
+        <li>You use all your actions to Strike or cast offensive cantrips, though the GM can have you use other actions to facilitate attack, such as draw a weapon, move so that a target is in reach, and so forth. Your targets are determined randomly by the GM. If you have no other viable targets, you target yourself, automatically hitting but not scoring a critical hit. If it's impossible for you to attack or cast spells, you babble incoherently, wasting your actions.</li>
+        <li>Each time you take damage from an attack or spell, you can attempt a DC 11 flat check to recover from your confusion and end the condition.</li>
+    </ul>
+
+    <a name="Controlled">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Controlled</h2>
+        </a>
+        <ul>
+            <li>Someone else is making your decisions for you, usually because you're being commanded or magically dominated. The controller dictates how you act and can make you use any of your actions, including attacks, reactions, or even Delay. The controller usually does not have to spend their own actions when controlling you.</li>
+        </ul>
+        
+    <a name="Dazzled">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Dazzled</h2>
+        </a>
+        <ul>
+            <li>Your eyes are overstimulated. If vision is your only precise sense, all creatures and objects are concealed from you.</li>
+        </ul>
+
+    <a name="Deafened">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Deafened</h2>
+        </a>
+        <ul>
+            <li>You can't hear. You automatically critically fail Perception checks that require you to be able to hear. You take a –2 status penalty to Perception checks that involve sound but also rely on other senses. If you perform an action with the auditory trait, you must succeed at a DC 5 flat check or the action is lost; attempt the check after spending the action but before any effects are applied. You are immune to auditory effects</li>
+        </ul>
+
+    <a name="Doomed">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Doomed</h2>
+        </a>
+        <ul>
+            <li>A powerful force has gripped your soul, calling you closer to death. Doomed always includes a value. The dying value at which you die is reduced by your doomed value. If your maximum dying value is reduced to 0, you instantly die. When you die, you're no longer doomed. </li>
+            <li>Your doomed value decreases by 1 each time you get a full night's rest.</li>
+        </ul>
+
+    <a name="Drained">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Drained</h2>
+        </a>
+        <ul>
+            <li>You become less healthy. Drained always includes a value. You take a status penalty equal to your drained value on checks requiring physical endurance, such as Fortitude saves. You also lose a number of hit points equal to your Drained value multiplied by 5.  Losing these Hit Points doesn’t count as taking damage.</li>
+            <li>Each time you get a full night’s rest, your drained value decreases by 1. This increases your maximum Hit Points, but you don’t immediately recover the lost Hit Points.</li>
+        </ul>
+    
+    <a name="Encumbered">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Encumbered</h2>
+        </a>
+        <ul>
+            <li>You are carrying more weight than you can manage. While you’re encumbered, you’re clumsy 1 and hobbled 2. As with all penalties to your Speed, this can’t reduce your Speed below 5 feet.</li>
+        </ul>
+
+    <a name="Enfeebled">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Enfeebled</h2>
+        </a>
+        <ul>
+            <li>You're physically weakened. Enfeebled always includes a value. When you are enfeebled, you take a status penalty equal to the condition value to rolls and DCs requiring physical strength, including melee attack rolls, damage rolls from muscle powered weapons or attacks, and Athletics checks.</li>
+        </ul>
+
+    <a name="Fascinated">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Fascinated</h2>
+        </a>
+        <ul>
+            <li>You are compelled to focus your attention on something, distracting you from whatever else is going on around you. You take a –1 status penalty to all checks and DCs not related to the subject of your fascination, all perception checks to anything outside of the subject of your fascination are downgraded, and you can't use actions with the concentrate trait unless they or their intended consequences are related to the subject of your fascination (as determined by the GM). For instance, you might be able to Seek and Recall Knowledge about the subject, but you likely couldn't cast a spell targeting a different creature. This condition ends if a creature uses hostile actions against you or any of your allies.</li>
+        </ul>
+
+    <a name="Fatigued">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Fatigued</h2>
+        </a>
+        <ul>
+            <li>You're tired and can't summon much energy. You take a –1 status penalty to Defenses. You can't use exploration activities performed while traveling.</li>
+            <li>You recover from fatigue after a full night's rest.</li>
+        </ul>
+
+    <a name="Flat-footed">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Flat-footed</h2>
+        </a>
+        <ul>
+            <li>You’re distracted or otherwise unable to focus your full attention on defense. You take a –2 circumstance penalty to AC. Some effects give you the flat-footed condition only to certain creatures or against certain attacks. Others—especially conditions—can make you universally flat-footed against everything. If a rule doesn’t specify that the condition applies only to certain circumstances, it applies to all of them; for example, many effects simply say “The target is flat-footed.”</li>
+        </ul>
+
+    <a name="Fleeing">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Fleeing</h2>
+        </a>
+        <ul>
+            <li>You're forced to run away due to fear or some other compulsion. On your turn, you must spend each of your actions trying to escape the source of the fleeing condition as expediently as possible (such as by using move actions to flee, or opening doors barring your escape). The source is usually the effect or caster that gave you the condition, though some effects might define something else as the source. You can't Delay or Ready while fleeing.</li>
+        </ul>
+    
+    <a name="Frightened">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Frightened</h2>
+        </a>
+        <ul>
+            <li>You’re gripped by fear and struggle to control your nerves. The frightened condition always includes a value. You take a status penalty equal to this value to all your checks and DCs. Unless specified otherwise, at the end of each of your turns, the value of your frightened condition decreases by 1.</li>
+        </ul>
+
+          <a name="Grabbed">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Grabbed</h2>
+    </a>
+    <ul>
+        <li>You're held in place by another creature, giving you the flat-footed and immobilized conditions. If you attempt a manipulate action while grabbed (such as casting a spell with a somatic, material or focus component), you must succeed at a DC 5 flat check or it is lost; roll the check after spending the action, but before any effects are applied.</li>
+    </ul>
+
+    <a name="Hobbled">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Hobbled</h2>
+        </a>
+        <ul>
+            <li>Your ambulation has been inhibited. Hobbled always includes a value. For each level of Hobbled you have, you take -5 feet to speed. </li>
+        </ul>
+
+
+<a name="Immobilized">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Immobilized</h2>
+    </a>
+    <ul>
+        <li>You can't use any action with the move trait. If you're immobilized by something holding you in place and an external force would move you out of your space, the force must succeed at a check against either the DC of the effect holding you in place or the relevant defense (usually Fortitude DC) of the creature holding you in place.</li>
+    </ul>
+
+<a name="Paralyzed">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Paralyzed</h2>
+    </a>
+    <ul>
+        <li>Your body is frozen in place. You have the flat-footed condition and can't act except to Recall Knowledge and use actions that require only the use of your mind (as determined by the GM). Your senses still function, but only in the areas you can perceive without moving your body, so you can't Seek while paralyzed.</li>
+    </ul>
+
+    <a name="Petrified">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Petrified</h2>
+        </a>
+        <ul>
+            <li>You have been turned to stone. You can’t act, nor can you sense anything. You become an object with a Bulk double your normal Bulk (typically 12 for a petrified Medium creature or 6 for a petrified Small creature), AC 9, Hardness 8, and the same current Hit Points you had when alive. You don’t have a Broken Threshold. When you’re turned back into flesh, you have the same number of Hit Points you had as a statue. If the statue is destroyed, you immediately die. While petrified, your mind and body are in stasis, so you don’t age or notice the passing of time.</li>
+        </ul>
+
+<a name="Prone">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Prone</h2>
+    </a>
+    <ul>
+        <li>You're lying on the ground. You are flat-footed and take a –2 circumstance penalty to attack rolls with weapons other than crossbows or firearms. The only move actions you can use while you're prone are Crawl and Stand. Standing up ends the prone condition. You have a +2 circumstance bonus to Guard and Reflex defenses while prone. You can Take Cover while prone to hunker down and gain greater cover against ranged attacks, even if you don't have an object to get behind, gaining a +4 circumstance bonus to AC against ranged attacks (but you remain flat-footed).</li>
+        <li>If you would be knocked prone while you're Climbing or Flying, you fall (see Falling for the rules on falling). You can't be knocked prone when Swimming.</li>
+    </ul>
+
+<a name="Restrained">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Restrained</h2>
+    </a>
+    <ul>
+        <li>You're tied up and can barely move, or a creature has you pinned. You have the flat-footed and immobilized conditions, and you can't use any actions with the attack or manipulate traits except to attempt to Escape or Force Open your bonds. Restrained overrides grabbed.</li>
+    </ul>
+
+<a name="Sickened">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Sickened</h2>
+    </a>
+    <ul>
+        <li>You feel ill. Sickened always includes a value. You take a status penalty equal to this value on all your checks and DCs. You can't willingly ingest anything—including elixirs and potions—while sickened.</li>
+        <li>You can spend a single action retching in an attempt to recover, which lets you immediately attempt a Fortitude save against the DC of the effect that made you sickened. On a success, you reduce your sickened value by 1 (or by 2 on a critical success).</li>
+    </ul>
+
+    <a name="Slowed">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Slowed</h2>
+        </a>
+        <ul>
+            <li>You have fewer actions. Slowed always includes a value. When you regain your actions at the start of a round, reduce the number of actions you regain by your slowed value. Because slowed has its effect at the start of the round, you don't immediately lose actions if you become slowed during your turn.</li>
+        </ul>
+
+<a name="Stupefied">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Stupefied</h2>
+    </a>
+    <ul>
+        <li>Your thoughts and instincts are clouded. Stupefied always includes a value. You take a status penalty equal to this value on checks and DCs heavily dependent on mental or capability, including Will saving throws, spell attack rolls, spell DCs, and skill actions of a mental or social nature, such as Recall Knowledge, Intimidate, Decipher Script, etc.  Any time you attempt an activity with the concentrate trait while stupefied, it is disrupted unless you succeed at a flat check with a DC equal to 5 + your stupefied value.</li>
+    </ul>
+
+<a name="Stunned">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Stunned</h2>
+    </a>
+    <ul>
+        <li>You've become senseless. You can't act while stunned. Stunned usually includes a value, which indicates how many total actions you lose, beginning on your next immediate turn. Stunned might also have a duration instead of a value, such as “stunned for 1 minute.” In this case, you lose all your actions for the listed duration.</li>
+        <li>You lose your actions each turn until you have lost a number of actions equal to the Stunned value. </li>
+        <li>Stunned overrides slowed. If the duration of your stunned condition ends while you are slowed, you count the actions lost to the stunned condition toward those lost to being slowed. So, if you were stunned 1 and slowed 2 at the beginning of the round, you would lose 1 action from stunned, and then lose only 1 additional action by being slowed, so you would still have 1 action remaining to use that turn.</li>
+    </ul>
+
+<a name="Tagged">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Tagged</h2>
+    </a>
+    <ul>
+        <li>A creature has locked in a special focus on you. You take a -2 penalty to attack rolls and DCs for any attack or offensive ability that doesn't target the creature that hunted you.</li>
+        <li>You can be subjected to only one tag at a time. Newer tags supersede older ones.</li>
+        <li>A tag ends if its creator dies or is unconscious.</li>
+    </ul>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html>

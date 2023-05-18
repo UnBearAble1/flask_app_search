@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armor and Weapons</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Character Creation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+            <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+            <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+            <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+            <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+            <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Creating Abilities
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+          </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Core Game Rules
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+          <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+          <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+          <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+          <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+          <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+          <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+          <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+        </div>
+        </div>
+        <a href="{{ url_for('Conditions')}}">Conditions</a>
+        <a class = "active" href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+      </div>
+
+<div class="sidenav">
+  <p> Armor and Weapons</p>
+  <a href="#Armor">Armor</a>
+  <p>Weapon Traits</p>
+  <a href="#Overview">Overview</a>
+  <a href="#Agile">Agile</a>
+  <a href="#Attached to Shield">Attached to Shield</a>
+  <a href="#Backstabber">Backstabber</a>
+  <a href="#Backswing">Backswing</a>
+  <a href="#Chained">Chained</a>
+  <a href="#Concealable">Concealable</a>
+  <a href="#Deadly">Deadly</a>
+  <a href="#Disarming">Disarming</a>
+  <a href="#Feinting">Feinting</a>
+  <a href="#Finesse">Finesse</a>
+  <a href="#Forceful">Forceful</a>
+  <a href="#Free Hand">Free Hand</a>
+  <a href="#Grappling">Grappling</a>
+  <a href="#Hampering">Hampering</a>
+  <a href="#Jousting">Jousting</a>
+  <a href="#Modular">Modular</a>
+  <a href="#Parry">Parry</a>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+
+<div class="a main">
+    
+    <h1>Armor and Weapons</h1>
+    <p>The world is filled with established weapons and armor with preset traits, but you get to design your own weapons and armor at character creation. Further, depending upon your base, you unlock additional benefits when using weapons or armor, as outlined below.</p>
+
+    <a name="Armor"><h2 style="padding-top: 48px; margin-top: -48px;">Armor</h2></a>
+    <p>Armor increases your serious and grievous wound thresholds against two of following damage types: slashing, bludgeoning, or piercing (at character creation, or if your character has a custom suit of armor made, you get to select which of the two.) In modern settings, ballistic is added to this list, and in futuristic settings, something like energy could be also. Armor does not protect against falling unless it has the impact resistant trait. Armor may also give you speed penalties or added difficulty when performing certain actions.</p>
+    <ul>
+        <li>Light Armor:  Provides a +2 Serious Wound Threshold</li>
+        <li>Medium Armor: Provides a +4 Serious Wound Threshold and a +3 Grievous Wound Threshold.</li>
+        <ul>
+            <li>Has the Inflexible 1 trait (You cannot critically succeed on the penalized actions shown below).</li>
+        </ul>
+        <li>Heavy Armor: Provides a +6 Serious Wound Threshold and a +3 Grievous Wound Threshold.</li>
+        <ul>
+            <li>Gives you a speed penalty of -5 feet.</li>
+            <li>Has the Inflexible 2 trait (As Inflexible 1, but you also treat failures on the penalized actions shown below as Critical failures).</li>
+        </ul>
+    </ul>
+    <p>You can also gain added protection by wearing a helmet, though lose perception benefits. Unlike with core armor, warrior training does not provide any added benefit when wearing helmets. Putting a helmet on is an interact action, but strapping it on is a second action. If your helmet isn’t strapped on, then receiving any wound to the head will knock your helmet to your feet. Raising or lowering a faceplate is a free action.</p>
+    <ul>
+        <li>Light Helm: +2 SW and +1 GW Threshold</li>
+        <ul>
+            <li>-1 to Perception Checks </li>
+        </ul>
+        <li>Heavy Helm: +4 SW and +2 GW Threshold</li>
+        <ul>
+            <li>-2 to Perception Checks  (-1 with faceplate up). </li>
+            <li>Limited field of vision</li>
+        </ul>
+    </ul>
+    <p><b>Armor Traits.</b> Each suit of armor has three traits. If you are an adept, you gain access to the first trait. If you are a hybrid, you gain access to the first and second. If you are a warrior, you gain access to all three traits.  These are the available armor traits a suit of armor can have:</p>
+    <ul>
+        <li>Mobile: Reduce the speed penalty for this armor by 5. </li>
+        <li>Flexible: Reduce your Inflexible trait by 1 category (can be chosen once).</li>
+        <li>Resilient: You get DR 5 against critical hits from damage types your armor protects against. </li>
+        <li>Fortified: Your armor protects against a third damage type as well (can be selected more than once in modern or futuristic settings). </li>
+        <li>Concealable: Your armor can be fully concealed within clothing (light armor only, must always be the first trait.)</li>
+        <li>Comfort: The armor counts as one degree less heavy for the ability to rest in it. This is only beneficial if the armor counts as less than light, then you can rest in it normally. (can be chosen three times). </li>
+        <li>Latched: You can don or doff this armor as a three action (contiguous) action per weight category (so 6 actions for medium, or 9 actions for heavy.) Each time you select this trait, you can reduce the number of actions by 3 (minimum 3 actions.) </li>
+        <li>Spiked: You can make unarmed attacks with this armor that deal 1d6 piercing damage. Additionally, any creature that attempts to grapple or grab you takes 2d6 piercing damage, or 4d6 if they critically fail the attempt.</li>
+        <li>Insulated: Your protection applies to cold, fire, electricity or acid attacks (pick each time you select this trait) </li>
+        <li>Impact Resistant: Your protection applies to falling damage.</li>
+    </ul>
+
+    <a name="Overview"><h2 style="padding-top: 48px; margin-top: -48px;">Weapons</h2></a>
+    <p>Like armor, at character creation you get to design your own weapons. Your character can also have custom weapons crafted that follow the rules here. Otherwise, all other weapons are made with these rules as well, but have static traits based on the game setting.</p>
+    <p>The more base damage a weapon does, the fewer traits it gets. The number of traits are also determined by whether the weapon requires one hand or two, or if the weapon is ranged.</p>
+    <p>The maximum damage for a 1 handed weapon is 1d8. Ranged weapons that deal 1d10 damage require the reload 1 trait, and those that can get to 1d12 require the reload 2 trait.</p>
+    <p>Ranged weapons have a default range of 40 feet, and Reload 0 (meaning they can be reloaded and attack in the same action, but it still counts as an 'interact' action).</p>
+    <table class="center">
+        <tr>
+          <th>Damage</th>
+          <th>Traits, 1H</th>
+          <th>Traits, 2H</th>
+          <th>Ranged</th>
+        </tr>
+        <tr>
+          <td>1D4</td>
+          <td>6</td>
+          <td>8</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1D6</td>
+          <td>4</td>
+          <td>6</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1D8</td>
+          <td>2</td>
+          <td>4</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>1D10</td>
+          <td>-</td>
+          <td>2</td>
+          <td>1 (reload 1)</td>
+        </tr>
+        <tr>
+          <td>1D12</td>
+          <td>-</td>
+          <td>1</td>
+          <td>0 (reload 2)</td>
+        </tr>
+      </table>
+      <h3>Weapon Traits </h3>
+      <p>Most weapon traits will differ depending upon whether the base of the wielder is an Adept, a Hybrid, or a Warrior. The more martial the character, the more skill they have in unlocking the truest potential from weapon traits.</p>
+      <p>Not all traits are equal, however.  Some cost more trait "slots" than others.</p>
+
+      <a name="Agile">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Agile (3 slots)</h2>
+        </a>
+        <p>(1 handed weapons only)</p>
+        <p>This weapon has a reduced multiple attack penalty.</p>
+        <ul>
+            <li>Adept:  MAP -4/-8 </li>
+            <li>Hybrid: MAP -4/-6</li>
+            <li>Warrior: MAP -3/-6</li>
+        </ul>
+  <a name="Attached to Shield">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Attached to Shield (3 slots)</h2>
+    </a>
+    <p>(1 handed weapons only)</p>
+    <p>This weapon is an attachment to shields, and can be attacked with as long as you are holding the shield.</p>
+
+
+  <a name="Backstabber">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Backstabber</h2></a>
+    <p>This weapon deals more damage to flat footed targets.</p>
+    <ul>
+        <li>Adept: +1 precision damage to flat footed targets</li>
+        <li>Hybrid: +2 precision damage to flat footed targets</li>
+        <li>Warrior: +3 precision damage to flat footed targets</li>
+    </ul>
+
+  <a name="Backswing">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Backswing</h2></a>
+    <p>You can use the momentum from a missed attack with this weapon to lead into your next attack. After missing with this weapon on your turn, you gain a circumstance bonus to your next attack with this weapon before the end of your turn.</p>
+    <ul>
+        <li>Adept: +1 to hit after a miss</li>
+        <li>Hybrid: +2 to hit after a miss</li>
+        <li>Warrior: +3 to hit after a miss</li>
+    </ul>
+
+  <a name="Chained">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Chained</h2></a>
+    <p>This weapon is of extra use against shields.</p>
+    <ul>
+        <li>Adept: Shield DR is counted as half for a shield block</li>
+        <li>Hybrid: Raised Shields are -1 AC, Shield DR is counted as half for shield block</li>
+        <li>Warrior: Raised Shields are -2 AC, Shield DR is counted as half for shield block</li>
+    </ul>
+
+  <a name="Concealable">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Concealable</h2></a>
+    <p>This weapon is designed to be inconspicuous or easily concealed. You gain a circumstance bonus to Stealth checks to hide or conceal a weapon with this trait.</p>
+    <ul>
+        <li>Adept: +2 to checks to conceal</li>
+        <li>Hybrid: +3 to checks to conceal</li>
+        <li>Warrior: +4 to checks to conceal</li>
+    </ul>
+
+  <a name="Deadly">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Deadly</h2></a>
+    <p>On a critical hit, the weapon adds a weapon damage die of the listed size. Roll this after doubling the weapon's damage.</p>
+    <ul>
+        <li>Adept: 1d6 bonus damage on a crit</li>
+        <li>Hybrid: 1d8 bonus damage on a crit</li>
+        <li>Warrior: 1d10 bonus damage on a crit</li>
+    </ul>
+
+  <a name="Disarming">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Disarming</h2></a>
+    <p>This weapon can be used to disarm with, and gains a circumstance bonus to do so</p>
+    <ul>
+        <li>Adept: +1 to checks to disarm</li>
+        <li>Hybrid: +2 to checks to disarm</li>
+        <li>Warrior: +3 to checks to disarm</li>
+    </ul>
+
+  <a name="Feinting">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Feinting</h2></a>
+    <p>Using this weapon gives you a circumstance bonus to the feint maneuver.</p>
+    <ul>
+        <li>Adept: +1 to checks to feint</li>
+        <li>Hybrid: +2 to checks to feint</li>
+        <li>Warrior: +3 to checks to feint</li>
+    </ul>
+
+  <a name="Finesse">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Finesse</h2></a>
+    <p>This weapon is particularly accurate at finding weak spots. For purposes of beating wound thresholds on your target, treat your damage as if it were higher. This is not real damage, and is not removed from their hit point total.</p>
+    <ul>
+        <li>Adept: Treat damage as if it were 2 points higher for purposes of overcoming wound thresholds.</li>
+        <li>Hybrid: Treat damage as if it were 4 points higher for purposes of overcoming wound thresholds.</li>
+        <li>Warrior: Treat damage as if it were 6 points higher for purposes of overcoming wound thresholds.</li>
+    </ul>
+
+  <a name="Forceful">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Forceful</h2></a>
+    <p>You gain damage bonuses for consecutive attacks against the same target within the same round.</p>
+    <ul>
+        <li>Adept: +1 damage (cumulative) on subsequent attacks against the same target</li>
+        <li>Hybrid: +2 damage (cumulative) on subsequent attacks against the same target</li>
+        <li>Warrior: +3 damage (cumulative) on subsequent attacks against the same target</li>
+    </ul>
+
+  <a name="Free Hand">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Free Hand (4 slots)</h2></a>
+    <p>(1 handed weapons only)</p>
+    <P>This hand that this weapon is in counts as a free hand.</P>
+
+  <a name="Grappling">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Grappling</h2></a>
+    <p>This weapon can be used to grapple with, even if you don't have a free hand. This uses the weapon's reach (if different from your own) and adds the weapon's item bonus below to the grapple check. If you critically fail a check to Grapple using the weapon, you can drop the weapon to take the effects of a failure instead of a critical failure.</p>
+    <ul>
+        <li>Adept: +1 to checks to grapple</li>
+        <li>Hybrid: +2 to checks to grapple</li>
+        <li>Warrior: +3 to checks to grapple</li>
+    </ul>
+
+  <a name="Hampering">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Hampering</h2></a>
+    <p>A weapon with the hampering trait includes a disruptive limb or flange. You can use an Interact action to thrash the weapon in a hex within the weapon’s reach. That hex becomes difficult terrain until you attack with the weapon, move, would otherwise stop thrashing it, or at the beginning of your next turn.</p>
+    <ul>
+        <li>Adept: 1 adjacent hex</li>
+        <li>Hybrid: 2 adjacent, connected hexes</li>
+        <li>Warrior: 3 adjacent, connected hexes</li>
+    </ul>
+
+  <a name="Jousting">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Jousting</h2></a>
+    <p>The weapon is suited for mounted combat with a harness or similar means. When mounted, if you moved at least 10 feet on the action before your attack, add a circumstance bonus to damage for that attack.</p>
+    <ul>
+        <li>Adept: +2 to damage</li>
+        <li>Hybrid: +3 to damage</li>
+        <li>Warrior: +4 to damage</li>
+    </ul>
+
+  <a name="Modular">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Modular</h2></a>
+    <p>You can pick two sets of traits (each losing 1 to this to trait), and switch between the two for an action.</p>
+
+
+  <a name="Parry">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Parry</h2></a>
+    <p>You can spend a single action to position this weapon defensively, gaining a bonus.</p>
+    <ul>
+        <li>Adept: a +1 circumstance bonus to Reflex defenses against  single-target effects from a single attacker you specify until the start of your next turn.</li>
+        <li>Hybrid: a +1 circumstance bonus to Reflex defense against all single-target effects until the start of your next turn.</li>
+        <li>Warrior: a +1 circumstance bonus to all Reflex defenses until the start of your next turn.</li>
+    </ul>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html>

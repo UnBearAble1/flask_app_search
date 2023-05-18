@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Rules</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Character Creation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+            <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+            <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+            <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+            <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+            <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Creating Abilities
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+          </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Core Game Rules
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Core_Game_Rules')}}#DC">Difficulty Class</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Modes of Play">Modes of Play</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Hit Points and Wounds">Hit Points and Wounds</a>
+            <a href="{{ url_for('Core_Game_Rules')}}#Defenses">Defenses</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+          <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+          <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+          <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+          <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+          <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+          <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+          <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+        </div>
+        </div>
+        <a href="{{ url_for('Conditions')}}">Conditions</a>
+        <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a class = "active" href="{{ url_for('Other_Rules')}}">Other Rules</a>
+    </div>
+
+<div class="sidenav">
+  <p> Other Rules</p>
+  <a href="#Bulk Limits and Lifting">Bulk Limits and Lifting</a>
+  <a href="#Cover">Cover</a>
+  <a href="#Difficult Terrain">Difficult Terrain</a>
+  <a href="#Disposition and Attitude">Disposition and Attitude</a>
+  <a href="#Environmental Damage">Environmental Damage</a>
+  <a href="#Quality Spectrum">Quality Spectrum</a>
+  <a href="#Suffocation and Drowning">Suffocation and Drowning</a>
+  <a href="#Temperature">Temperature</a>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+<div class="a main">
+<h1>Other Rules</h1>
+
+<a name="Bulk Limits and Lifting"><h2 style="padding-top: 48px; margin-top: -48px;">Bulk Limits and Lifting</h2></a>
+<p>Your character’s Bulk Limit determines how much weight they can comfortably carry. If they’re carrying a total amount of Bulk Limit they are encumbered. A character can’t carry a total amount of Bulk that exceeds double their Bulk Limit. The Bulk your character is carrying equals the sum of all of their items; keep in mind that 10 light items make up 1 Bulk. </p>
+<p>A character's Bulk Limit is 5 if they aren’t specialized in the Might skill, or 10 if they are, with a divider or multiplier based on their size: </p>
+<ul>
+    <li>Tiny: divided by 4 (round up to the nearest 10th, decimals allowing L weight items)</li>
+    <li>Small: divided by 2 (round up to the nearest 10th, decimals allowing L weight items)</li>
+    <li>Medium: multiplied by 1</li>
+    <li>Large: multiplied by 4</li>
+    <li>Huge: multiplied by 10</li>
+    <li>Gargantuan: multiplied by 20</li>
+</ul>
+<p><i>Example:  A tiny creature with the might skill has a Bulk Limit of (10, divided by 4 for size is 2.5 - they could carry 2B and 5L worth of items), where as a huge creature without the might skill ranks has a Bulk Limit of 20 (5 base, multiplied by 4 for size).</i></p>
+<p>The same multiplier above is also used for appropriate sized equipment. A pixie's longsword would be 1/4th the bulk of a human's (3L) whereas a huge plague giant's longsword would be 10x the bulk (10B).</p>
+<h3>Maximum Lift:</h3>
+<p>A creature can lift 15kg per point of Bulk Limit they have.</p>
+<p>Example:  humans untrained in might can lift 75 kg (165 lbs,) whereas a huge Adult Green Dragon specialized in might can lift 1,500 kg (3,306 lbs.) </p>
+<p>Using the <a href="{{ url_for('Actions')}}#Power Lift">Power Lift</a> Athletics action can potentially double this number.</p>
+
+
+<a name="Cover"><h2 style="padding-top: 48px; margin-top: -48px;">Cover</h2></a>
+<p>When you're behind an obstacle that could block weapons, guard you against explosions, and make you harder to detect, you're behind cover. Standard cover gives you a +2 circumstance bonus to AC, to Reflex saves against area effects, and to Stealth checks to Hide, Sneak, or otherwise avoid detection. You can increase this to greater cover using the <a href="{{ url_for('Actions')}}#Take Cover">Take Cover</a> basic action, increasing the circumstance bonus to +4. If cover is especially light, typically when it's provided by a creature, you have lesser cover, which grants a +1 circumstance bonus to AC. A creature with standard cover or greater cover can attempt to use Stealth to Hide, but lesser cover isn't sufficient.</p>
+<p>Cover is relative, so you might simultaneously have cover against one creature and not another. Cover applies only if your path to the target is partially blocked. If a creature is entirely behind a wall or the like, you don't have line of effect and typically can't target it at all.</p>
+<p>Usually, the GM can quickly decide whether your target has cover. If you're uncertain or need to be more precise, draw a line from the center of your space to the center of the target's space. If that line passes through any terrain or object that would block the effect, the target has standard cover (or greater cover if the obstruction is extreme or the target has Taken Cover). If the line passes through a creature instead, the target has lesser cover. When measuring cover against an area effect, draw the line from the effect's point of origin to the center of the creature's space.</p>
+
+<h3>Cover and Large Creatures:</h3>
+<p>If a creature between you and a target is two or more sizes larger than both you and your target, that creature’s space blocks the effect enough to provide standard cover instead of lesser cover. The GM might determine that a creature doesn’t gain cover from terrain that it’s significantly larger than. For example, a Huge dragon probably wouldn’t receive any benefit from being behind a 1-foot-wide pillar.</p>
+
+<h3>Special Circumstances:</h3>
+<p>Your GM might allow you to overcome your target’s cover in some situations. If you’re right next to an arrow slit, you can shoot without penalty, but you have greater cover against someone shooting back at you from far away. Your GM might let you reduce or negate cover by leaning around a corner to shoot or the like. This usually takes an action to set up, and the GM might measure cover from an edge or corner of your space instead of your center.</p>
+
+<a name="Difficult Terrain"><h2 style="padding-top: 48px; margin-top: -48px;">Difficult Terrain</h2></a>
+<p>Difficult terrain is any terrain that impedes your movement, ranging from particularly rough or unstable surfaces to thick ground cover and countless other impediments. Moving into a square of difficult terrain (or moving 5 feet into or within an area of difficult terrain, if you’re not using a grid) costs an extra 5 feet of movement. Moving into a square of greater difficult terrain instead costs 10 additional feet of movement. This additional cost is not increased when moving diagonally. You can’t Step into difficult terrain.</p>
+<p>Movement you make while you are jumping ignores the terrain you’re jumping over. Some abilities (such as flight or being incorporeal) allow you to avoid the movement reduction from some types of difficult terrain. Certain other abilities let you ignore difficult terrain on foot; such an ability also allows you to move through greater difficult terrain at the normal movement cost as for difficult terrain, though it wouldn’t let you ignore greater difficult terrain unless the ability specifies otherwise.</p>
+
+<a name="Disposition and Attitude"><h2 style="padding-top: 48px; margin-top: -48px;">Disposition and Attitude</h2></a>
+<p>Your influence on NPCs is measured with a set of attitudes that reflect how they view your character. These are only a brief summary of a creature's disposition. The GM will supply additional nuance based on the history and beliefs of the characters you're interacting with, and their attitudes can change in accordance with the story.</p>
+<p><b>Helpful:</b>  A creature that is helpful to a character wishes to actively aid that character. It will accept reasonable Requests from that character, as long as such requests aren't at the expense of the helpful creature's goals or quality of life. If the character or one of their allies uses a hostile action against the creature, the creature gains a worse attitude condition depending on the severity of the hostile action, as determined by the GM.</p>
+<p><b>Friendly:</b> This condition reflects a creature's disposition toward a particular character, and only supernatural effects (like a spell) can impose this condition on a PC. A creature that is friendly to a character likes that character. The character can attempt to Make a Request of a friendly creature, and the friendly creature is likely to agree to a simple and safe request that doesn't cost it much to fulfill. If the character or one of their allies uses hostile actions against the creature, the creature gains a worse attitude condition depending on the severity of the hostile action, as determined by the GM.</p>
+<p><b>Indifferent:</b> (Most NPCs start out indifferent.) A creature that is indifferent to a character doesn't really care one way or the other about that character. Assume a creature's attitude to a given character is indifferent unless specified otherwise.</p>
+<p><b>Unfriendly:</b> A creature that is unfriendly to a character dislikes and specifically distrusts that character. The unfriendly creature won't accept Requests from the character.</p>
+<p><b>Hostile:</b> A creature that is hostile to a character actively seeks to harm that character. It doesn't necessarily attack, but it won't accept Requests from the character.</p>
+<p>No one can ever change the attitude of a player character with these skills. You can role-play interactions with player characters, and even use Diplomacy results if the player wants a mechanical sense of how convincing or charming a character is, but players make the ultimate decisions about how their characters respond.</p>
+
+<a name="Environmental Damage"><h2 style="padding-top: 48px; margin-top: -48px;">Environmental Damage</h2></a>
+<p>Some environmental features or natural disasters deal damage. Because the amount of damage can vary based on the specific circumstances, the rules for specific environments and natural disasters use damage categories to describe the damage, rather than exact numbers. Use the Table below to determine damage from an environment or natural disaster. When deciding the exact damage amount, use your best judgment based on how extreme you deem the danger to be.</p>
+<ul>
+    <li>Minor: 1d6 - 2d6</li>
+    <li>Moderate: 3d6 - 6d6</li>
+    <li>Major: 7d6 - 12d6</li>
+    <li>Massive:  13d6 - 20d6</li>
+</ul>
+
+<a name="Quality Spectrum"><h2 style="padding-top: 48px; margin-top: -48px;">Quality Spectrum</h2></a>
+<p>Used when generating art or a performance, or using a where the flavor/aesthetic quality of outcome is important, the result of your roll determines the quality: </p>
+<ul>
+    <li>19-20: 	Phenomenal</li>
+    <li>14-18: Outstanding</li>
+    <li>6-13: 	Good</li>
+    <li>3-5: 	Okay</li>
+    <li>2: 	Bad</li>
+    <li>1: 	Terrible</li>
+</ul>
+
+<a name="Suffocation and Drowning"><h2 style="padding-top: 48px; margin-top: -48px;">Suffocation and Drowning</h2></a>
+<p>You can hold your breath for 10 rounds. Reduce your remaining air by 1 round at the end of each of your last turns in a round, or by 2 if you attack or cast any spells that turn. You also lose 1 round worth of air each time you are critically hit or critically fail a save against a damaging effect. If you speak (including casting spells with verbal components or activating items with command components) you lose all remaining air.</p>
+<p>When you run out of air, you fall unconscious and start suffocating. You can’t recover from being unconscious and must attempt a DC 20 Fortitude save at the end of each of your turns. On a failure, you take 1d10 damage, and on a critical failure, you die. On each check after the first, the DC increases by 5 and the damage by 1d10; these increases are cumulative. Once your access to air is restored, you stop suffocating and are no longer unconscious (unless you’re at 0 Hit Points).</p>
+
+<a name="Temperature"><h2 style="padding-top: 48px; margin-top: -48px;">Temperature</h2></a>
+<p>Often, temperature doesn’t impose enough of a mechanical effect to worry about beyond describing the clothing the characters need to wear to be comfortable. Particularly hot and cold weather can make creatures fatigued more quickly during overland travel and can cause damage if harsh enough, as shown in the table below. </p>
+<p>Appropriate cold-weather gear (such as the winter clothing) can negate the damage from severe cold or reduce the damage from extreme cold to that of particularly severe cold.</p>
+
+<table class="center">
+    <tr>
+        <th>Category</th>
+        <th>Temperature</th>
+        <th>Fatigue</th>
+        <th>Damage</th>
+    </tr>
+    <tr>
+        <!--add &nbsp; to create whiteplace within the table-->
+        <td>Incredible cold</td>
+        <td>-80º F or colder </br>(-62º C or colder)</td>
+        <td>&nbsp;2 hours&nbsp;</td>
+        <td>Moderate cold every minute</td>
+    </tr>
+    <tr>
+        <td>Extreme cold</td>
+        <td>-79º F to -21º F </br>(-61º C to -29º C)</td>
+        <td>&nbsp;4 hours&nbsp;</td>
+        <td>&nbsp;Minor cold every 10 minutes&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Severe cold</td>
+        <td>-20º F to 12º F </br>(-28º C to -11º C)</td>
+        <td>4 hours</td>
+        <td>Minor cold every hour</td>
+    </tr>
+    <tr>
+        <td>Mild cold</td>
+        <td>13º F to 32º F </br>(-10º C to 0º C)</td>
+        <td>4 hours </td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Normal</td>
+        <td>33º F to 94º F </br>(1º C to 34º C)</td>
+        <td>8 hours</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Mild heat</td>
+        <td>95º F* to 104º F* </br>(35º C to 40º C)</td>
+        <td>4 hours</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Severe heat</td>
+        <td>105º F* to 114º F </br>(41º C to 45º C)</td>
+        <td>4 hours</td>
+        <td>Minor fire every hour</td>
+    </tr>
+    <tr>
+        <td>Extreme heat</td>
+        <td>115º F to 139º F </br>(46º C to 59º C)</td>
+        <td>4 hours</td>
+        <td>Minor fire every 10 minutes</td>
+    </tr>
+    <tr>
+        <td>&nbsp;Incredible heat&nbsp;</td>
+        <td>140º F or warmer </br> (60º C or warmer)</td>
+        <td>2 hours</td>
+        <td>Moderate fire every minute</td>
+    </tr>
+</table>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Game Rules</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('Home')}}">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Character Creation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Character_Creation')}}#Base">Step One: Pick your Base</a>
+            <a href="{{ url_for('Character_Creation')}}#Skills and Language">Step Two: Select Skills and Languages</a>
+            <a href="{{ url_for('Character_Creation')}}#Adept">Step Three: Adept Statistics and Choices</a>
+            <a href="{{ url_for('Character_Creation')}}#Abilities">Step Four: Purchase your Abilities</a>
+            <a href="{{ url_for('Character_Creation')}}#Complications">Step Five: Select your Complications</a>
+            <a href="{{ url_for('Character_Creation')}}#Gear">Step Six: Design and select your gear</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropbtn">Creating Abilities
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('Creating_Abilities')}}#Build Points, Base and Mod">Build Points, Base and Mod</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Activation and Duration">Activation and Duration</a>
+            <a href="{{ url_for('Creating_Abilities')}}#Building an Ability">Building an Ability</a>
+          </div>
+        </div>
+        <a class=active href="{{ url_for('Core_Game_Rules')}}">Core Game Rules</a>
+        <div class="dropdown">
+        <button class="dropbtn">Actions
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('Actions')}}#Combat Maneuvers">Combat Maneuvers</a>
+          <a href="{{ url_for('Actions')}}#Tactical Movement">Tactical Movement</a>
+          <a href="{{ url_for('Actions')}}#Social Activities">Social Activities</a>
+          <a href="{{ url_for('Actions')}}#Clandestine Actions">Clandestine Actions</a>
+          <a href="{{ url_for('Actions')}}#Utility Actions">Utility Actions</a>
+          <a href="{{ url_for('Actions')}}#Environmental Movement">Environmental Movement</a>
+          <a href="{{ url_for('Actions')}}#Exploration Mode Activities">Exploration Mode Activities</a>
+          <a href="{{ url_for('Actions')}}#Modern Setting Activities">Modern Setting Activities</a>
+        </div>
+        </div>
+        <a href="{{ url_for('Conditions')}}">Conditions</a>
+        <a href="{{ url_for('Armor_and_Weapons')}}">Armor and Weapons</a>
+        <a href="{{ url_for('Other_Rules')}}">Other Rules</a>
+    </div>
+
+    <div class="sidenav">
+        <p>Core Game Rules</p>
+        <a href="#">Top of page</a>
+        <a href="#DC">Difficulty Class</a>
+        <button class="dropdown-btn">Modes of Play
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#Encounter Mode">Encounter Mode</a>
+          <a href="#Exploration Mode">Exploration Mode</a>
+          <a href="#Downtime Mode">Downtime Mode</a>
+        </div>
+        <button class="dropdown-btn">Hit Points </br>and Wounds
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#Wounds">Wounds</a>
+          <a href="#Healing">Healing</a>
+          <a href="#Dying">Dying</a>
+        </div>
+        <a href="#Defenses">Defenses</a>
+    </div>
+<div class="a main">
+<h1>Core Game Rules</h1>
+
+<p>This game’s core mechanic is based mostly on Pathfinder 2e, though heavily modified. If you’ve played a D20 fantasy game, much of this should seem familiar. We use familiar terminology throughout, but we’ve also made a lot of changes.</p>
+<a name="DC"><h3 style="padding-top: 48px; margin-top: -48px;">Difficulty Class (DC) and the D20</h3></a>
+<p>The core mechanic of this game is rolling a d20 and trying to meet or exceed a number, called a difficulty class. This is called a “check” or a “roll.”</p>
+<ul>
+    <li>If you make your check by 10 or more, or if you roll a natural 20, you critically succeed.</li>
+    <li>If you make your check by rolling the number exactly, or exceed it, you succeed.</li>
+    <li>If you miss your check (roll under the DC), you fail.</li>
+    <li>If you miss your check by 10 or more, or roll a natural 1, you critically fail.</li>
+</ul>
+
+<p>Unlike other D20 games, this game assumes you won’t (or rarely will be) adding any bonuses to the roll. For the most part, all checks you make will be what other games call “Flat checks” - simple D20 rolls versus the target number. If you do add bonuses, it will likely be circumstantial and non-permanent.</p>
+
+<p>There are four modifications to D20 rolls that have shorthand terms:</p>
+<ul>
+    <li><i>Advantage:</i> Roll 2d20 and pick the highest</li>
+    <li><i>Disadvantage:</i></li> Roll 2d20 and pick the lowest
+    <li><i>Upgraded:</i></li> Whatever you roll (critical failure, failure, success, critical success), take the next category higher. (so a failure would become a success, or a success would become a critical success, for example)
+    <li><i>Downgraded:</i> Whatever you roll (critical failure, failure, success, critical success), take the next category lower. (so a failure would become a critical failure, or a success would become a failure, for example)</li>
+</ul>
+
+<p>The game uses these difficulties:</p>
+<p>
+    DC: 3-5 - Intermediate</br>
+    DC: 6-8 - Moderate</br>
+    DC: 9-11 - Difficult</br>
+    DC: 12-14 - Very Difficult</br>
+    DC: 15-17 - Extremely Difficult</br>
+    DC: 18+ - Nearly Impossible</br>
+</p>
+
+<p>If the character isn’t specialized in the skill or attribute being rolled, their results are downgraded.</p>
+
+<p>Characters are either specialists in a thing, or not. Simulating TV, movies, and books, this game primarily considers you a specialist or not, with no granularity in between. By default, characters are specialized in all defenses, in all attack rolls, in perception, in their seven selected skills and selected lore. You can use abilities to further enhance your character’s ability with certain tasks, or complications to further reduce their effectiveness.</p>
+
+<a name="Modes of Play">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Modes of Play</h2></a>
+
+    <p>Sessions are divided into three different modes of play: encounters, exploration, and downtime. Each mode represents different kinds of situations, with specific stakes and time scales, and characters can use different sorts of actions and reactions in each.</p>
+
+<a name="Encounter Mode">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Encounter Mode (typically combat)</h3></a>
+
+<p>When every individual action counts, you enter the encounter mode of play. In this mode, time is divided into <b>rounds</b>, each of which is about 6 seconds of time in the game world.  Every round is broken into three <b>turns</b>, along with any number of <b>bonus turns</b>, each of which is about 2 seconds.</p>
+<p>Each character and creature typically has three actions per round, and can typically only use one action per turn. Creatures who are hasted (or for any reason have more than three actions), gain access to bonus turns, which go after the normal three turns. For example, if you are hasted 2, you’d have two bonus turns after the three normal turns. </p>
+<p>Encounters assume there are sides to the conflict. On each turn, each side of an encounter trades off, with each participant on each side taking a single action, followed by each participant on the other taking another action. When both sides have spent their action, the turn is over.  When all characters have spent all their actions, the round is over.</p>
+<p><b>Initiative:</b> Transitioning from exploration to an encounter usually involves rolling for initiative. Call for initiative once a trap is triggered, as soon as two opposing groups come into contact, or when a creature on one side decides to take action against the other. An initiative roll is done by a single player on each side of the conflict (typically one player on the PC side, and the GM for the enemies side,) chosen by each side. Whichever side rolls higher goes first. Enemies win ties.</p>
+<p>When choosing what type of roll to use for initiative, lean toward the most obvious choice. The most common roll is Perception. The next most common skills to use are Stealth and Deception (for tricking opponents). For social contests, it's common to use Deception, Diplomacy, or Intimidation.</p>
+
+<h4>Reactions</h4>
+<p>You get only one reaction per encounter round, and you can use it only when its specific trigger is fulfilled. Often, the trigger is another creature’s action.</p>
+
+<h4>Two+ Actions</h4>
+<p>If an activity takes two or more actions, then you can perform it on your turn immediately, if you have that many actions remaining, but lose that number of actions. This means if on your first turn (remember there are 3 turns a round), if you use a 3 action activity, then you have no actions remaining for your last 2 turns and cannot act.</p>
+
+<h4>Two+ Actions, Contiguous</h4>
+<p>Unlike with normal multi-action abilities, Contiguous actions require you to spread the actions out over multiple turns. This means you start the contiguous action on one turn, using your action, then continue it over multiple turns until you have spent the appropriate number of actions (one action per turn). </p>
+
+<h4>Chained</h4>
+<p>If an activity says it can be “Chained” into another activity, it means the combination of the two activities effectively becomes a new activity that costs their total number of actions, but allows you to perform it on a single turn. Often, “chaining” actions will specify a drawback for doing so.</p>
+<ul>
+    <li>For example, the “Stand” activity costs 1 action, but says it “can be chained into any other activity that requires a roll, such as an attack. Doing so gives the rolled activity a -2 circumstance penalty.” This means if you are prone, you could chain the Stand activity with the Strike activity, but the combination would cost 2 actions and the Strike would be made at -2. </li>
+</ul>
+
+<h4>Multiple Attack Penalty</h4>
+<p>The more of certain types of attacks you make beyond your first against a single target in a single round, the more that specific creature is able to anticipate your attacks, represented by the multiple attack penalty. The second time you use an activity with the “Attack” trait against the same target during your turn, you take a –5 penalty to your check. The third time you do so, and on any subsequent attacks, you take a –10 penalty to your check. Every check that has the attack trait counts toward your multiple attack penalty, including Strikes, spell attack rolls, certain skill activities like Trip, and many others. Any ability that deals damage automatically has the “Attack” trait.</p>
+<p>To avoid the Multiple Attack Penalty, characters should attempt more activities without the “attack” trait, such as Feint, Grapple, or Demoralize, or opt to target different creatures with each of their attacks throughout the round.</p>
+
+
+<a name="Exploration Mode">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Exploration Mode</h3></a>
+    <p>While encounters use rounds for combat, exploration is more free form. The GM determines the flow of time, as you could be traveling by horseback across craggy highlands, negotiating with merchants, or delving in a dungeon in search of danger and treasure. Exploration lacks the immediate danger of encounter mode, but it offers its own challenges.</p>
+
+<a name="Downtime Mode">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Downtime Mode</h3></a>
+    <p>Downtime mode is played day-by-day rather than minute-by-minute or scene-by-scene. Usually this mode of play occurs when you are in the safety of a settlement, maybe recovering from your adventures or studying an artifact you found.</p>
+
+<a name="Hit Points and Wounds">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Hit Points and Wounds</h2></a>
+
+<p>All creatures and objects have Hit Points (HP). Your maximum Hit Point value represents your vigor, wherewithal, and heroic drive when you are in good health and rested. As your hit points are reduced, your character grows weary, bruised, scraped, winded, and more and more likely to suffer a blow that will knock them out. </p>
+<p>Creatures cannot be reduced to fewer than 0 Hit Points. When most creatures reach 0 Hit Points, they die and are removed from play unless the attack was nonlethal, in which case they are instead knocked out for a significant amount of time (usually 1 minute or more). When undead and construct creatures reach 0 Hit Points, they are destroyed.</p>
+<p>Player characters, their companions, and other significant characters and creatures don’t automatically die when they reach 0 Hit Points. Instead, they are knocked out and are at <a href="#Dying">risk of death</a>. At the GM’s discretion, villains, powerful monsters, special NPCs, and enemies with special abilities that are likely to bring them back to the fight (like ferocity, regeneration, or healing magic) can use these rules as well.</p>
+
+<a name="Wounds">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Wounds</h3></a>
+<p>When a creature suffers an amount of damage equal to or greater than their serious wound threshold, they take a serious wound. When they suffer an amount of damage equal to or greater than their grievous wound threshold, they suffer a grievous wound instead.</p>
+<p>Wounds give a creature a -1 wound penalty to their rolls and DCs until they are healed.</p>
+<p>As an optional rule, some GMs may want wounds to be gritty and brutal. In this case, in addition to the -1 wound penalty, when a character suffers a wound, roll on the following table when a character suffers a wound:</p>
+<table class="center">
+    <tr>
+        <th>Melee</th>
+        <th>Ranged</th>
+        <th>Location</th>
+        <th>Serious Wound</th>
+        <th>Grievous Wound</th>
+    </tr>
+    <tr>
+        <td>1-4</td>
+        <td>1-3</td>
+        <td>Feet / Legs</td>
+        <td>
+            <ul>
+                <li>You immediately fall <a href="{{ url_for('Conditions')}}#Prone">prone</a>.</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Hobbled">hobbled</a> 1</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You immediately fall prone.</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Hobbled">hobbled</a> 3</li>
+                <li>If the roll that got this result was a 1, the foot or leg is severed*, and you gain 2d6 bleed damage. This bleed damage cannot end unless the wound is treated (or you receive magical healing). </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>5-9</td>
+        <td>4-6</td>
+        <td>Secondary Hand / Arm</td>
+        <td>
+            <ul>
+                <li>You immediately drop what you are holding </li>
+                <li>You cannot use the hand or arm for any purpose</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You immediately drop what you are holding </li>
+                <li>You cannot use the hand or arm for any purpose</li>
+                <li>If the roll that got this result was a 5 (melee) or 4 (ranged), the hand or arm is severed*, and you gain 2d6 bleed damage. This bleed damage cannot end unless the wound is treated (or you receive magical healing). </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>10-14</td>
+        <td>7-9</td>
+        <td>Primary Hand / Arm</td>
+        <td>
+            <ul>
+                <li>You immediately drop what you are holding</li>
+                <li>You cannot use the hand or arm for any purpose </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You immediately drop what you are holding </li>
+                <li>You cannot use the hand or arm for any purpose</li>
+                <li>If the roll that got this result was a 10 (melee) or 7 (ranged), the hand or arm is severed*, and you gain 2d6 bleed damage. This bleed damage cannot end unless the wound is treated (or you receive magical healing)</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>15-17</td>
+        <td>10-17</td>
+        <td>Body </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1 </li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Fatigued">fatigued</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 2</li>
+                    <li>You are <a href="{{ url_for('Conditions')}}#Fatigued">fatigued</a></li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Clumsy">clumsy</a> 2</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Enfeebled">enfeebled</a> 1</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>15-17</td>
+        <td>10-17</td>
+        <td>Body </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1 </li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Fatigued">fatigued</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}Stunned#">stunned</a> 2</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Fatigued">fatigued</a></li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Clumsy">clumsy</a> 2</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Enfeebled">enfeebled</a> 1</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>18</td>
+        <td>Face</td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1 </li>
+                <li>You are unable to speak coherently</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 2</li>
+                <li>You are unable to speak coherently </li>
+                <li>You lose an eye, and are <a href="{{ url_for('Conditions')}}#Dazzled">dazzled</a></li>
+                <li>If the wound is removed naturally, you can eventually train yourself to function with one eye, removing the <a href="{{ url_for('Conditions')}}#Dazzled">dazzled</a> condition.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>19</td>
+        <td>Head</td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1 </li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Stupefied">stupefied</a> 1</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 2</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Stupefied">stupefied</a> 2</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Drained">drained</a> 2</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>20</td>
+        <td>Throat</td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Encumbered">encumbered</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>You are immediately <a href="{{ url_for('Conditions')}}#Stunned">stunned</a> 1</li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Encumbered">encumbered</a></li>
+                <li>You are <a href="{{ url_for('Conditions')}}#Drowning">drowning</a> (but at half your normal available rounds of air), or if piercing or slashing damage, you take 4d6 bleed instead. Either result can only be cleared with DC 14 Treat Wounds check. </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<p>*A severed or fully destroyed limb is a special kind of wound. Healing the wound using surgery does not reattach the limb (unless in a modern setting, and even then only on a natural 20), and healing the wound with magic only reattaches the limb if it is held against the stump during the healing process (which may take multiple interact actions).</p>
+
+<a name="Healing">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Healing</h3></a>
+    <p>There are a number of spells and items that restore hit points, including the <a href="{{ url_for('Actions')}}#Administer First Aid">Administer First Aid</a> action from the <a href="{{ url_for('Character_Creation')}}#Medicine">Medicine</a> skill. After resting for 10 minutes, you recover a number of wounds equal to your serious wound threshold.</p>
+<p>To heal and remove Wounds, however, is a bit more difficult. There are three ways:</p>
+<ul>
+    <li><b>Rest and time.</b> Assuming a character doesn't suffer a complication for an untreated wound (see below), Wounds will possibly go away with time. After completing their 4th full rest with a Serious Wound, a character can attempt a DC 15 flat check to see if the wound heals. They repeat this check every full rest afterward until it does so. Grievous Wounds follow the same rule, but characters cannot attempt their first flat check until after their 14th full rest.</li>
+    <li><b>Perform Surgery.</b> Use of the <a href="{{ url_for('Character_Creation')}}#Medicine">Medicine</a> skill's <a href="{{ url_for('Actions')}}#Perform Surgery">Perform Surgery</a> action can remove Wounds.</li>
+    <li><b>Special Abilities.</b> Some special abilities, items, or spells will remove serious or even grievous wounds. </li>
+</ul>
+<p>If a character receives any wounds, they must be tended before the character rests if they wish guaranteed natural recovery. Any magical healing will function enough to consider your wounds as tended.  Any successful use of <a href="{{ url_for('Actions')}}#Administer First Aid">Administer First Aid</a>, <a href="{{ url_for('Actions')}}#Stabilize Injuries">Stabilize Injuries</a>, or <a href="{{ url_for('Actions')}}#Perform Surgery">Perform Surgery</a> will also qualify.</p>
+<p>If your character does nothing to tend their wounds and injuries, then when they next take an extended rest, they must make a flat check to see if their injuries give rise to a complication. Roll a flat DC 8 (+2 per Wound sustained).</p>
+<ul>
+    <li>Critical Success: You are under no further risk of complications, and heal normally.</li>
+    <li>Success: You suffer no complications for this rest, but the next full rest roll again. You heal normally this time.</li>
+    <li>Failure: You suffer a complication. Not only do you not heal this night, you suffer 1d6 points of damage to the wound.</li>
+    <li>Critical Failure: You suffer a major complication. Not only do you not heal this night, uou cannot heal until your wounds receive medical attention (natural or magical), and you take 1d6 damage per day until they do.</li>
+</ul>
+
+<a name="Dying">
+    <h3 style="padding-top: 48px; margin-top: -48px;">Dying</h3></a>
+    <p>As a player character, when you are reduced to 0 Hit Points, you’re knocked out. Damage that reduces you to 0 hit points is considered upgraded when determining what type of wound you suffer. This means that if you take damage that brings you to 0, you will always suffer at least a serious wound, and will suffer a grievous wound if you take more damage than your serious wound threshold.</p>
+    <p>When you are reduced to 0 hit points, you gain the dying condition at a value equal to your number of Serious or Grievous wounds.  If you have the doomed condition, increase your dying value by an amount equal to your doomed value. If the damage was dealt by a nonlethal attack or nonlethal effect, you don’t gain the dying condition; you are instead unconscious with 0 Hit Points.</p>
+    <p>If you take damage while you already have the dying condition, increase your dying condition value by 1, or by 2 if the damage came from an attacker’s critical hit or your own critical failure.</p>
+    <p>When you’re dying, beginning the next round, on the turn in which you were reduced to 0 hit points, and then again every round at the same time afterward, you must attempt a flat check with a DC equal to 10 + your current dying value to see if you get better or worse. This is called a recovery check. The effects of this check are as follows.</p>
+    <ul>
+        <li>Critical Success: Your dying value is reduced by 2.</li>
+        <li>Success: Your dying value is reduced by 1.</li>
+        <li>Failure: Your dying value increases by 1.</li>
+        <li>Critical Failure: Your dying value increases by 2.</li>
+    </ul>
+    <p>If your dying value ever reaches 5, you die.</p>
+    <p><b>Example of Dying:</b> Gorgonus has a serious wound already, and 12 hit points remaining.On the enemy’s action of the third turn of the round, he takes 15 points of damage from an arrow, enough to reduce him to 0 hit points. The following things happen to him</p>
+    <ul>
+        <li>He is reduced to 0 hit points</li>
+        <li>He goes unconscious, immediately falling prone and dropping everything he is holding</li>
+        <li>15 damage isn’t enough to normally give him a wound (his serious wound threshold is 25), but because the result is upgraded when you are reduced to 0, he gains a new serious wound. Had he taken 28 points of damage, it would have been upgraded to a grievous wound.</li>
+        <li>Because he had an existing serious wound, and just gained a new serious wound, his dying value starts at 2.</li>
+        <li>Since he was reduced to 0 hit points on the enemy’s action of the third turn of the round, then next round, on the enemy’s action of the third turn, he gets to make a dying recovery check. The DC is 12 (10 + his dying value).</li>
+    </ul>
+
+    <a name="Defenses">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Defenses</h2></a>
+        <p>There are three defenses in this game: Fortitude, Reflex, and Willpower. Your character is assumed to be specialized in all three.</p>
+    <ul>
+        <li><b>Fortitude:</b> Defends against effects of abilities and afflictions that can debilitate the body.</li>
+        <li><b>Reflex:</b> Measures how well you can respond quickly to a situation and how gracefully you can avoid effects that have been thrown at you, including melee and ranged strikes from weapons.</li>
+        <li><b>Willpower:</b> Measures how well you can resist attacks to your mind and spirit.</li>
+    </ul>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+<script src="{{url_for('static', filename='dropdown.js')}}"></script>
+</body>
+</html>

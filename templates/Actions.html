@@ -1,0 +1,1418 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="sidenav">
+  <a style="font-size:16px;" href="#Actions">Back to top</a>
+  <button class="dropdown-btn">Combat Maneuvers
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Attack of Opportunity">Attack of Opportunity</a>
+    <a href="#Demoralize">Demoralize</a>
+    <a href="#Disarm">Disarm</a>
+    <a href="#Feint">Feint</a>
+    <a href="#Grapple">Grapple</a>
+    <a href="#Raise a Shield">Raise a Shield</a>
+    <a href="#Ready">Ready</a>
+    <a href="#Readjust Grip">Readjust Grip</a>
+    <a href="#Release">Release</a>
+    <a href="#Shove">Shove</a>
+    <a href="#Strike">Strike</a>
+    <a href="#Take Cover">Take Cover</a>
+    <a href="#Trip">Trip</a>
+  </div>
+  <button class="dropdown-btn">Tactical Movement
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Crawl">Crawl</a>
+    <a href="#Drop Prone">Drop Prone</a>
+    <a href="#Mount">Mount</a>
+    <a href="#Stand">Stand</a>
+    <a href="#Step">Step</a>
+    <a href="#Stride">Stride</a>
+    <a href="#Tumble Away">Tumble Away</a>
+    <a href="#Tumble Through">Tumble Through</a>
+  </div>
+  <button class="dropdown-btn">Social Activities
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Arrange a Meeting">Arrange a Meeting</a>
+    <a href="#Coerce">Coerce</a>
+    <a href="#Discover Motivations">Discover Motivations</a>
+    <a href="#Gather Information">Gather Information</a>
+    <a href="#Impersonate">Impersonate</a>
+    <a href="#Lie">Lie</a>
+    <a href="#Make an Impression">Make an Impression</a>
+    <a href="#Perform">Perform</a>
+    <a href="#Persuade">Persuade</a>
+    <a href="#Request">Request</a>
+    <a href="#Sense Motive">Sense Motive</a>
+  </div>
+  <button class="dropdown-btn">Clandestine Actions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Avoid Notice">Avoid Notice</a>
+    <a href="#Conceal an Object">Conceal an Object</a>
+    <a href="#Cover Tracks">Cover Tracks</a>
+    <a href="#Create Forgery">Create Forgery</a>
+    <a href="#Hide">Hide</a>
+    <a href="#Palm an Object">Palm an Object</a>
+    <a href="#Pick a Lock">Pick a Lock</a>
+    <a href="#Sneak">Sneak</a>
+    <a href="#Steal">Steal</a>
+  </div>
+  <button class="dropdown-btn">Utility Actions
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Administer First Aid">Administer First Aid</a>
+    <a href="#Aid">Aid</a>
+    <a href="#Assess Structures">Assess Structures</a>
+    <a href="#Avert Gaze">Avert Gaze</a>
+    <a href="#Connect the Dots">Connect the Dots</a>
+    <a href="#Create a Diversion">Create a Diversion</a>
+    <a href="#Disable Device">Disable Device</a>
+    <a href="#Dismiss">Dismiss</a>
+    <a href="#Escape">Escape</a>
+    <a href="#Examine Clue">Examine Clue</a>
+    <a href="#Force Open">Force Open</a>
+    <a href="#Interact">Interact</a>
+    <a href="#Perform Surgery">Perform Surgery</a>
+    <a href="#Point Out">Point Out</a>
+    <a href="#Power Lift">Power Lift</a>
+    <a href="#Recall Knowledge">Recall Knowledge</a>
+    <a href="#Reconstruct the Scene">Reconstruct the Scene</a>
+    <a href="#Seek">Seek</a>
+    <a href="#Sense Direction">Sense Direction</a>
+    <a href="#Stabilize Injuries">Stabilize Injuries</a>
+    <a href="#Track">Track</a>
+    <a href="#Treat Poison">Treat Poison</a>
+    <a href="#"></a>
+  </div>
+  <button class="dropdown-btn">Environmental Movement
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Arrest a Fall">Arrest a Fall</a>
+    <a href="#Balance">Balance</a>
+    <a href="#Climb">Climb</a>
+    <a href="#Grab an Edge">Grab an Edge</a>
+    <a href="#High Jump">High Jump</a>
+    <a href="#Hustle">Hustle</a>
+    <a href="#Leap">Leap</a>
+    <a href="#Long Jump">Long Jump</a>
+    <a href="#Maneuver in Flight">Maneuver in Flight</a>
+    <a href="#Squeeze">Squeeze</a>
+    <a href="#Swim">Swim</a>
+    <a href="#"></a>
+  </div>
+  <button class="dropdown-btn">Exploration Mode Activities
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Create Artwork">Create Artwork</a>
+    <a href="#Decipher Writing">Decipher Writing</a>
+    <a href="#Defend">Defend</a>
+    <a href="#Follow the Expert">Follow the Expert</a>
+    <a href="#Identify Magic">Identify Magic</a>
+    <a href="#Investigate">Investigate</a>
+    <a href="#Repair">Repair</a>
+    <a href="#Search">Search</a>
+    <a href="#Scout">Scout</a>
+  </div>
+  <button class="dropdown-btn">Modern Setting Activities
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Avoid System Detection">Avoid System Detection</a>
+    <a href="#Bypass Countermeasures">Bypass Countermeasures</a>
+    <a href="#Configure Explosives">Configure Explosives</a>
+    <a href="#Create Electronic Forgery">Create Electronic Forgery</a>
+    <a href="#Identify Technology">Identify Technology</a>
+    <a href="#Infiltrate Secured System">Infiltrate Secured System</a>
+    <a href="#Jury Rig">Jury Rig</a>
+    <a href="#Navigate Unsecured Computer System">Navigate Unsecured </br>Computer System</a>
+  </div>
+</div>
+<div class="a main">
+
+    <a name="Actions"><h1 style="padding-top: 48px; margin-top: -48px;">Actions</h1></a>
+
+    <a name="Combat Maneuvers"><h1 style="padding-top: 48px; margin-top: -48px;">Combat Maneuvers</h1></a>
+    <p>The following actions are available to all creatures, but are typically used in combat</p>
+
+
+<a name="Attack of Opportunity">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Attack of Opportunity (Reaction)</h2></a>
+    <ul class="tag">
+        <li><b>Trigger:</b> A creature within your reach uses a manipulate action or a move action, makes a ranged attack, or leaves a square during a move action it’s using.</li>
+    </ul>
+    <p>You lash out at a foe that leaves an opening. Make a melee Strike against the triggering creature. If your attack is a critical hit and the trigger was a manipulate action, you disrupt that action. This Strike doesn’t count toward your multiple attack penalty, and your multiple attack penalty doesn’t apply to this Strike.</p>
+
+  <a name="Demoralize">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Demoralize (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Concentrate, Emotion, Fear, Mental </b></li>
+    </ul>
+    <p>With a sudden shout, a well-timed taunt, or a cutting putdown, you can shake an enemy's resolve. Choose a creature within 30 feet of you who you're aware of. Attempt an Intimidation check against that target's Will DC. If the target does not understand the language you are speaking, or you're not speaking a language, you take a –4 circumstance penalty to the check. Regardless of your result, the target is temporarily immune to your attempts to Demoralize it for 10 minutes.</p>
+    <ul>
+      <li>Critical Success: The target becomes <a href="{{ url_for('Conditions')}}#Frightened">frightened</a> 2</li>
+      <li>Success: The target becomes <a href="{{ url_for('Conditions')}}#Frightened">frightened</a> 1</li>
+    </ul>
+
+  <a name="Disarm">
+    <h2 style="padding-top: 48px; margin-top: -48px;"></h2></a>
+    <ul class="tag">
+      <li><b>Requires:</b> You have at least one free hand or have your target grappled or restrained. Your target isn't more than one size larger than you. </li>
+    </ul>
+    <p>You try to knock something out of a creature’s grasp. Attempt an Athletics check against the target’s Reflex DC.</p>
+    <ul>
+      <li><b>Critical Success:</b> You knock the item out of the target's grasp. It falls to the ground in the target's space.</li>
+      <li><b>Success:</b> You weaken your target's grasp on the item. Until that creature spends an action to <a href="{{ url_for('Actions')}}#Readjust Grip">Readjust Grip</a>, further successes (but not failures or critical failures) to Disarm the target of that item are upgraded, and the target takes a –2 circumstance penalty to attacks with the item or other checks requiring a firm grasp on the item.</li>
+      <li><b>Critical Failure:</b> You lose your balance and become <a href="{{ url_for('Conditions')}}#Flat-footed">flat-footed</a> until the start of your next turn</li>
+    </ul>
+
+  <a name="Feint">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Feint (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Mental</b></li>
+      <li><b>Requirements:</b> You are within melee reach of the opponent you attempt to Feint</li>
+    </ul>
+    <p>With a misleading flourish, you leave an opponent unprepared for your real attack. Attempt a Deception check against that opponent’s Perception DC.</p>
+    <ul>
+      <li><b>Critical Success:</b> You throw your enemy’s defenses against you entirely off. The target is <a href="{{ url_for('Conditions')}}#Flat-footed">flat-footed</a> against melee attacks that you attempt against it until the end of your next round.</li>
+      <li><b>Success:</b> Your foe is fooled, but only momentarily. The target is <a href="{{ url_for('Conditions')}}#Flat-footed">flat-footed</a> against the next melee attack that you attempt against it before the end of your next round. </li>
+      <li><b>Critical Failure:</b> Your feint backfires. You are <a href="{{ url_for('Conditions')}}#Flat-footed">flat-footed</a> against melee attacks and the target attempts against you until the end of your next round.</li>
+    </ul>
+
+  <a name="Grapple">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Grapple (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Requires:</b> You have at least one free hand or have your target grabbed or restrained. Your target isn't more than one size larger than you.</li>
+    </ul>
+    <p>You attempt to grab a creature or object with your free hand. Attempt an Athletics check against the target's Fortitude DC. You can Grapple a target you already have <a <a href="{{ url_for('Conditions')}}#Grabbed">grabbed or <a href="{{ url_for('Conditions')}}#Restrained">restrained</a> without having a hand free.</p>
+    <ul>
+      <li><b>Critical Success:</b> Your target is <a href="{{ url_for('Conditions')}}#Restrained">restrained</a> until the end of your next turn unless you move or your target <a href="{{ url_for('Actions')}}#Escape">Escapes</a>.</li>
+      <li><b>Success:</b></li> Your target is <a href="{{ url_for('Conditions')}}#Grabbed">grabbed</a> until the end of your next turn unless you move or your target <a href="{{ url_for('Actions')}}#Escape">Escapes</a>.
+      <li><b>Failure:</b> You fail to grab your target. If you already had the target <a href="{{ url_for('Conditions')}}#Grabbed">grabbed or <a href="{{ url_for('Conditions')}}#Restrained">restrained</a> using a Grapple, those conditions on that creature or object end</li>
+      <li><b>Critical Failure:</b></li> If you already had the target <a href="{{ url_for('Conditions')}}#Grabbed">grabbed or <a href="{{ url_for('Conditions')}}#Restrained">restrained</a>, it breaks free. Your target can either grab you, as if it succeeded at using its own Grapple action against you, or force you to fall and land <a href="{{ url_for('Conditions')}}#Prone">prone</a>.
+    </ul>
+
+  <a name="Raise a Shield">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Raise a Shield (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Requirements:</b> You are wielding a Shield </li>
+    </ul>
+    <p>You position your shield to protect yourself. When you have Raised a Shield, you gain its listed circumstance bonus against attacks to your Reflex defense. Your shield remains raised until the start of your next round.</p>
+
+  <a name="Ready">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Ready (1 action) </h2></a>
+    <ul class="tag">
+      <li><b>Concentrate</b></li>
+    </ul>
+    <p>You prepare to use an action that will occur outside your turn. Choose a single action or free action you can use, and designate a trigger. Your turn then ends. If the trigger you designated occurs before the start of your next turn, you can use the chosen action as a reaction (provided you still meet the requirements to use it). You can’t Ready a free action that already has a trigger. If you have a multiple attack penalty and your readied action and target qualifies for MAP, your readied attack takes the multiple attack penalty you had at the time you used Ready. This is one of the few times the multiple attack penalty applies when it’s not your turn.</p>
+
+  <a name="Readjust Grip">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Readjust Grip (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Requires:</b> Your grip on an item has been weakened because of the <a href="#Disarm">Disarm</a> maneuver. </li> 
+      <li><b>Chained:</b> You can chain this activity into one that requires a roll, such as an attack, but that activity suffers a -2 circumstance penalty to the roll. </li>
+    </ul>
+    <p>You readjust your grip, removing the penalties shown in the success criteria (but not critical success) of the Disarm maneuver. </p>
+
+  <a name="Release">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Release (free action)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+    </ul>
+    <p>You release something you're holding in your hand or hands. This might mean dropping an item, removing one hand from your weapon while continuing to hold it in another hand, releasing a rope that is suspending a chandelier, or performing a similar action. Unlike most manipulate actions, Release does not trigger reactions that can be triggered by actions with the manipulate trait (such as Attack of Opportunity). If you want to prepare to Release something outside of your turn, use the Ready activity.</p>
+
+  <a name="Shove">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Shove (1 Action) </h2></a>
+    <ul class="tag">
+      <li><b>Requires:</b> You have at least one free hand or have your target grappled or restrained. Your target isn't more than one size larger than you.</li>
+    </ul>
+    <p>You push a creature away from you. Attempt a Might check against your target's Fortitude defense.
+    </p>
+    <ul>
+      <li><b>Critical Success:</b> You push your target up to 10 feet away from you. You can Stride after it, but you must move the same distance and in the same direction. </li>
+      <li><b>Success:</b> You push your target back 5 feet. You can Stride after it, but you must move the same distance and in the same direction.</li>
+      <li><b>Critical Failure:</b></li> You lose your balance, fall, and land prone.
+    </ul>
+
+  <a name="Strike">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Strike (1 Action) </h2></a>
+    <ul class="tag">
+      <li><b>Attack</b></li>
+    </ul>
+    <p>You attack with a weapon you're wielding or with an unarmed attack, targeting one creature within your reach (for a melee attack) or within range (for a ranged attack). Roll the attack roll for the weapon or unarmed attack you are using, and compare the result to the target creature's Reflex DC to determine the effect. </p>
+    <ul>
+      <li><b>Critical Success:</b> As success, but you deal double damage.</li>
+      <li><b>Success:</b> You deal damage according to the weapon or unarmed attack, including any modifiers, bonuses, and penalties you have to damage. For Player characters, that typically means the dice type of damage from their weapon, plus 10. </li>
+    </ul>
+
+  <a name="Take Cover">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Take Cover (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Reaction:</b> You are benefiting from cover, are near a feature that allows you to take cover, or are prone.</li>
+    </ul>
+    <p>You press yourself against a wall or duck behind an obstacle to take better advantage of cover. If you would have standard cover, you instead gain greater cover, which provides a +4 circumstance bonus to Reflex defenses and to Stealth checks to Hide, Sneak, or otherwise avoid detection. Otherwise, you gain the benefits of standard cover (a +2 circumstance bonus instead). This lasts until you move from your current space, the beginning of your next round, become unconscious, or end this effect as a free action.</p>
+
+  <a name="Trip">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Trip (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Attack</b></li>
+      <li><b>Requires:</b></li> You have at least one free hand or have your target grappled or restrained. Your target isn't more than one size larger than you.
+    </ul>
+    <p>You try to knock a creature to the ground. Attempt an Athletics check against the target’s Reflex DC.</p>
+    <ul>
+      <li><b>Critical Success:</b> The target falls and lands prone and takes 1d6 bludgeoning damage.</li>
+      <li><b>Success:</b> The target falls and lands prone.</li>
+      <li><b>Critical Failure:</b></li> You lose your balance and fall and land prone.
+    </ul>
+
+<a name="Tactical Movement"><h1 style="padding-top: 48px; margin-top: -48px;">Tactical Movement</h1></a>
+<p>The following activities are available to all creatures, and are typically used in tactical encounters</p>
+
+<a name="Crawl">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Crawl (1 action) </h2></a>
+    <ul class="tag">
+      <li><b>Move </b></li>
+      <li><b>Requirements:</b></li> You are prone and your Speed is at least 10 feet.
+    </ul>
+    <p>You move 5 feet by crawling and continue to stay prone.</p>
+
+  <a name="Drop Prone">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Drop Prone (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Chained:</b> You can chain this activity into any activity that requires a roll, such as an attack, but the roll suffers a -2 circumstance penalty. You can also chain a stride into this activity. </li>
+    </ul>
+    <p>You fall Prone.</p>
+
+  <a name="Mount">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Mount (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Requirements:</b> You are adjacent to a creature that is at least one size larger than you and is willing to be your mount.</li>
+    </ul>
+    <p>You move onto the creature and ride it. If you’re already mounted, you can instead use this action to dismount, moving off the mount into a space adjacent to it.</p>
+
+  <a name="Stand">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Stand (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Chained:</b> You can chain this activity into any activity that requires a roll, such as an attack, but the roll suffers a -2 circumstance penalty. You can also chain this activity into a stride, but you only move half your speed. </li>
+    </ul>
+    <p>You stand up from prone.</p>
+
+  <a name="Step">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Step (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Requirements:</b></li> Your Speed is at least 10 feet.
+      <li><b>Chained:</b></li> You can chain this activity into any activity that requires a roll, such as an attack, but the roll suffers a -2 circumstance penalty. You can also chain this activity into a stride, but you only move half your speed. 
+    </ul>
+    <p>You carefully move 5 feet. Unlike most types of movement, Stepping doesn't trigger reactions, such as Attacks of Opportunity, that can be triggered by move actions or upon leaving or entering a square. You can't Step into difficult terrain, and you can't Step using a Speed other than your land Speed.</p>
+
+  <a name="Stride">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Stride (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Chained:</b></li> You can chain this activity into any activity that requires a roll, such as an attack, but the roll suffers a -2 circumstance penalty. You can also chain this activity into drop prone or take cover activities. 
+    </ul>
+    <p>You move your speed.</p>
+
+  <a name="Tumble Away">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Tumble Away (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You Stride up to your Speed, moving through threatened areas. Attempt an Acrobatics check against any enemy’s Reflex DC that would have the opportunity to hit you with a reaction, such as attack of opportunity. Make this roll in the order of the enemies you encounter, since each has a chance to stop your movement. </p>
+    <ul>
+      <li><b>Critical Success:</b> Your movement does not trigger any reactions normally triggered by movement, such as attack of opportunity, and you get a +1 circumstance bonus to your Reflex defense against the enemy until the beginning of your next round. </li>
+      <li><b>Success:</b> Your movement does not trigger any reactions normally triggered by movement, such as attack of opportunity</li>
+      <li><b>Failure:</b> Your movement triggers reactions normally.</li>
+      <li><b>Critical Failure:</b> Your movement ends, and your movement triggers reactions normally.</li>
+    </ul>
+
+  <a name="Tumble Through">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Tumble Through (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You Stride up to your Speed. During this movement, you can try to move through the space of one enemy. Attempt an Acrobatics check against the enemy’s Reflex DC as soon as you try to enter its space. You can Tumble Through using Climb, Fly, Swim, or another action instead of Stride in the appropriate environment.</p>
+    <ul>
+      <li><b>Critical Success:</b> You move through the enemy’s space, treating the squares in its space as difficult terrain (every 5 feet costs 10 feet of movement). If you don’t have enough Speed to move all the way through its space, you get the same effect as a failure. You do not trigger reactions triggered by movement, such as attacks of opportunity. </li>
+      <li><b>Success:</b> You move through the enemy’s space, treating the squares in its space as difficult terrain (every 5 feet costs 10 feet of movement). If you don’t have enough Speed to move all the way through its space, you get the same effect as a failure. Note that, unless you have an ability that states otherwise, this movement may still trigger reactions that trigger based on movement within reach. </li>
+      <li><b>Failure:</b> Your movement ends, and you trigger reactions as if you had moved out of the square you started in.</li>
+    </ul>
+
+
+<a name="Social Activities"><h1 style="padding-top: 48px; margin-top: -48px;">Social Activities</h1></a>
+<p>The following activities are available to all creatures, and are typically used in social interactions</p>
+
+  <a name="Arrange a Meeting">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Arrange a Meeting (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration</b></li>
+    </ul>
+    <p>You reach out to your contacts, do research, or hit the streets, businesses, and gathering places in an attempt to arrange a meeting with an important person. The GM determines the DC of the check  and the amount of time it takes (typically 2 hours, but sometimes more), along with any benefit you might be able to gain by spending coin on bribes, drinks, or gifts. It may be impossible to reach a certain individual without first meeting with one or more others first and convincing them. Others may be impossible to reach entirely. </p>
+    <ul>
+      <li><b>Critical Success:</b> You arrange a meeting. </li>
+      <li><b>Success:</b></li> You arrange a meeting, likely with strings attached. 
+      <li><b>Critical Failure:</b></li> You draw the wrong sorts of attention, or get locked out of certain circles.
+    </ul>
+
+  <a name="Coerce">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Coerce (Exploration) </h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Concentrate, Exploration, Emotion, Linguistic, Mental</b></li>
+    </ul>
+    <p>With threats either veiled or overt, you attempt to bully a creature into doing what you want. You must spend at least 1 minute of conversation with a creature you can see and that can either see or sense you. At the end of the conversation, attempt an Intimidation check against the target's Will DC, modified by any circumstances the GM determines. The attitudes referenced in the effects below are summarized in Disposition and Attitudes. </p>
+    <ul>
+      <li><b>Critical Success:</b> The target gives you the information you seek or agrees to follow your directives so long as they aren't likely to harm the target in any way. The target continues to comply for an amount of time determined by the GM but not exceeding 1 day, at which point the target becomes unfriendly (if they weren't already unfriendly or hostile). However, the target is too scared of you to retaliate—at least in the short term.</li>
+      <li><b>Success:</b> As critical success, but once the target becomes unfriendly, they might decide to act against you—for example, by reporting you to the authorities or assisting your enemies.</li>
+      <li><b>Failure:</b> The target doesn’t do what you say, and if they were not already unfriendly or hostile, they become unfriendly.</li>
+      <li><b>Critical Failure:</b> The target refuses to comply, becomes hostile if they weren’t already, and can’t be Coerced by you for at least 1 week.</li>
+    </ul>
+
+  <a name="Discover Motivations">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Discover Motivations (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>You spend at least one minute (the GM may determine it takes more time than this) to watch or study an NPC to learn more about that NPC’s preferences. Choose an NPC and attempt an Empathy check or an appropriate skill check determined by the GM. The DC is typically found in the NPC’s influence stat block.</p>
+    <ul>
+      <li><b>Critical Success:</b> Choose two of the options detailed in Success below; you can choose the same option twice to learn two pieces of information from the same category.</li>
+      <li><b>Success:</b> Choose one of the following: </li>
+        <ul>
+            <li>You learn which skill that can aid in influencing the NPC has the lowest DC (skipping any skills that you already know)</li>
+            <li>You learn which approach works best (Diplomacy, Deception, Intimidation)</li>
+            <li>one of the NPC’s positive biases</li>
+            <li>one of the NPC’s negative biases</li>
+        </ul>
+      <li><b>Failure:</b> You learn no information.</li>
+      <li><b>Critical Failure:</b> Choose a piece of information to learn about, as success, but the information is incorrect. For instance, you might think the NPC is susceptible to flattery when actually the NPC is resistant to flattery.</li>
+    </ul>    
+
+  <a name="Gather Information">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Gather Information (Exploration) </h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Secret</b></li>
+    </ul>
+    <p>You canvass local markets, taverns, and gathering places in an attempt to learn about a specific individual or topic. The GM determines the DC of the check (typically Diplomacy) and the amount of time it takes (typically 2 hours, but sometimes more), along with any benefit you might be able to gain by spending coin on bribes, drinks, or gifts.</p>
+    <ul>
+      <li><b>Success:</b> You collect information about the individual or topic. The GM determines the specifics.</li>
+      <li><b>Critical Failure:</b> You collect incorrect information about the individual or topic.</li>
+    </ul>
+    <p>Sample Gather Information Tasks</p>
+    <ul>
+    <ul class="sampleDC">
+      <li><b>DC 3:</b> talk of the town</li>
+      <li><b>DC 6:</b> common rumor</li>
+      <li><b>DC 9:</b> obscure rumor, poorly guarded secret</li>
+      <li><b>DC 13:</b>  well-guarded or esoteric information</li>
+      <li><b>DC 18:</b>  information known only to an incredibly select few, or only to extraordinary beings</li>
+    </ul>
+    </ul>
+
+
+  <a name="Impersonate">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Impersonate (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Concentrate, Manipulate, Secre</b></li>
+    </ul>
+    <p>You create a disguise to pass yourself off as someone or something you are not. Assembling a convincing disguise takes 10 minutes and requires a disguise kit, but a simpler, quicker disguise might do the job if you’re not trying to imitate a specific individual, at the GM’s discretion. In most cases, creatures have a chance to detect your deception only if they use the Seek action to attempt Perception checks against your Deception DC. If you attempt to directly interact with someone while disguised, the GM rolls a secret Deception check for you against that creature’s Perception DC instead. If you’re disguised as a specific individual, the GM might give creatures you interact with a circumstance bonus based on how well they know the person you’re imitating, or the GM might roll a secret Deception check even if you aren’t directly interacting with others.</p>
+    <ul>
+      <li><b></b>Success: You trick the creature into thinking you’re the person you’re disguised as. You might have to attempt a new check if your behavior changes.</li>
+      <li><b></b>Failure: The creature can tell you’re not who you claim to be.</li>
+      <li><b></b>Critical Failure: The creature can tell you’re not who you claim to be, and it recognizes you if it would know you without a disguise.</li>
+    </ul>
+
+  <a name="Lie">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Lie (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Linguistic, Concentrate, Mental, Secret</b></li>
+    </ul>
+    <p>You try to fool someone with an untruth. Doing so takes at least 1 round, or longer if the lie is elaborate. You roll a single Deception check and compare it against the Perception DC of every creature you are trying to fool. The GM might give them a circumstance bonus based on the situation and the nature of the lie you are trying to tell. Elaborate or highly unbelievable lies are much harder to get a creature to believe than simpler and more believable lies, and some lies are so big that it’s impossible to get anyone to believe them. At the GM’s discretion, if a creature initially believes your lie, it might attempt a Perception check later to Sense Motive against your Deception DC to realize it’s a lie. This usually happens if the creature discovers enough evidence to counter your statements.</p>
+    <ul>
+      <li><b>Success:</b> The target believes your lie</li>
+      <li><b>Failure:</b> The target doesn’t believe your lie and gains a +4 circumstance bonus against your attempts to Lie for the duration of your conversation. The target is also more likely to be suspicious of you in the future.</li>
+    </ul>
+
+
+    <a name="Make an Impression">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Make an Impression (Exploration)</h2></a>
+        <ul class="tag">
+          <li><b>Auditory, Concentrate, Exploration, Linguistic, Mental</b></li>
+        </ul>
+        <p>With at least 1 minute of conversation, during which you engage in charismatic overtures, flattery, and other acts of goodwill, you seek to make a good impression on someone to make them temporarily agreeable. At the end of the conversation, attempt a Diplomacy check against the Will DC of one target, modified by any circumstances the GM sees fit. Good impressions (or bad impressions, on a critical failure) last for only the current social interaction unless the GM decides otherwise.</p>
+        <ul>
+          <li><b>Critical Success:</b> The target’s attitude toward you improves by two steps.</li>
+          <li><b>Success:</b> The target’s attitude toward you improves by one step.</li>
+          <li><b>Critical Failure:</b> The target’s attitude toward you decreases by one step.</li>
+        </ul>
+
+  <a name="Perform">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Perform (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration</b></li>
+    </ul>
+    <p>You spend at least one minute making a brief performance—one song, a quick dance, or a few jokes—you use the Perform action. This action is most useful when you want to prove your capability or impress someone quickly. The default DC is usually based on the Quality Spectrum. Performing rarely has an impact on its own, but it might influence the DCs of subsequent Diplomacy checks against the observers—or even change their attitudes—if the GM sees fit. You get +1 to this roll for extending your performance up to five minutes, or +2 if you extend it up to three hours. </p>
+    <ul>
+      <li><b>Critical Success:</b> Your performance impresses the observers, and they’re likely to share stories of your ability.</li>
+      <li><b>Success:</b> You prove yourself, and observers appreciate the quality of your performance.</li>
+      <li><b>Failure:</b> Your performance falls flat.</li>
+      <li><b>Critical Failure:</b> Something about your performance really turns people away. </li>
+    </ul>
+
+  <a name="Persuade">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Persuade (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>You take at least one minute to attempt to persuade an NPC to support your cause, to believe a truth you are telling, or to consider an alternative to their way of thinking. Choose an NPC, and attempt a skill check to persuade that NPC (Deception if you use guile and manipulation, Diplomacy if you use charm or flattery, or Intimidation if you use force of will or aggression.) The DC, how much time this takes (always at least a minute), and whether success is possible, depend on the NPC's motivations, their disposition toward you, and the approach you take. </p>
+    <ul>
+      <li><b>Critical Success:</b> You persuade the NPC to the maximum degree possible with your approach, and their disposition toward you improves by one.</li>
+      <li><b>Success:</b> You persuade the NPC within the confines of your approach.</li>
+      <li><b>Failure:</b> You fail to persuade the NPC.</li>
+      <li><b>Critical Failure:</b> You fail to persuade the NPC, and their disposition worsens toward you by one.</li>
+    </ul>
+
+    <p>Persuading an NPC can be done with any skill the DM decides is possible, but each NPC should have best and worst approaches - these can be learned with the Discover Motivations activity. Typically these approaches not only modify the DC, but the possible best and worst possible outcomes as well. </p>
+    <p>Typically, the DC for <b>persuade roll</b> is based on how set in their <b>opinion</b> they are on the subject:</p>
+    <ul>
+        <li>No real opinion:  Intermediate (DC 3-5)</li>
+        <li>Some opinion: Moderate (DC 6-8)</li>
+        <li>A definite opinion: Difficult (DC 9-11)</li>
+    </ul>
+    <p><b>Specialized Only:</b></p>
+    <ul>
+        <li>A strong opinion: Very tp Extremely Difficult  (DC 12-17)</li>
+        <li>A passionate opinion: Nearly Impossible (DC 18+)</li>
+    </ul>
+    <p><b>Approach (Diplomacy, Deception, or Intimidation)</b></p>
+    <ul>
+        <li>Right: +2 circumstance bonus</li>
+        <li>Neither: No change </li>
+        <li>Wrong: -2 circumstance penalty</li>
+    </ul>
+    <p><b>Target’s Disposition:</b></p>
+    <ul>
+        <li>Helpful: +4 status bonus</li>
+        <li>Friendly: +2 status bonus</li>
+        <li>Indifferent: No change</li>
+        <li>Unfriendly: -2 status penalty</li>
+        <li>Hostile: -4 status penalty</li>
+    </ul>
+    <p><b>Target’s Biases:</b></p>
+    <ul>
+        <li>Appeal to: -2 difficulty DC</li>
+        <li>Represent: +2 difficulty DC</li>
+    </ul>
+    <p><b>Aid from Friends:</b></p>
+    <p>Up to three other people may attempt to aid in a persuasion attempt, chiming in with any skill they feel is relevant (even if it isn't normally a social skill.) Depending on the target's interests, some of these skill rolls may have no effect (unless they critically fail, in which case it is still a negative effect.) In these cases, the Aid circumstance modifier is actually added (or subtracted from) the Approach circumstance modifier (one of the only times two circumstance modifiers are added or subtracted together.) </p>
+
+  <a name="Request">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Request (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Concentrate, Linguistic, Mental</b></li>
+    </ul>
+    <p>You can make a request of a creature that’s friendly or helpful to you. You must couch the request in terms that the target would accept given their current attitude toward you. The GM sets the Diplomacy DC based on the difficulty of the request. Some requests are unsavory or impossible, and even a helpful NPC would never agree to them.</p>
+    <ul>
+      <li><b>Critical Success:</b> The target agrees to your request without qualifications.</li>
+      <li><b>Success:</b> The target agrees to your request, but they might demand added provisions or alterations to the request.</li>
+      <li><b>Failure:</b> The target refuses the request, though they might propose an alternative that is less extreme.</li>
+      <li><b>Critical Failure:</b> Not only does the target refuse the request, but their attitude toward you decreases by one step due to the temerity of the request.</li>
+    </ul>
+
+  <a name="Sense Motive">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Sense Motive (1 action) </h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Secret</b></li>
+    </ul>
+    <p>You try to tell whether a creature's behavior is abnormal. Choose one creature, and assess it for odd body language, signs of nervousness, and other indicators that it might be trying to deceive someone. The GM attempts a single secret Perception check for you and compares the result to the Deception DC of the creature, the DC of a spell affecting the creature's mental state, or another appropriate DC determined by the GM. You typically can't try to Sense the Motive of the same creature again until the situation changes significantly.</p>
+    <ul>
+      <li><b>Critical Success:</b> You determine the creature’s true intentions and get a solid idea of any mental magic affecting it.</li>
+      <li><b>Success:</b> You can tell whether the creature is behaving normally, but you don’t know its exact intentions or what magic might be affecting it.</li>
+      <li><b>Failure:</b> You detect what a deceptive creature wants you to believe. If they’re not being deceptive, you believe they’re behaving normally.</li>
+      <li><b>Critical Failure:</b> You get a false sense of the creature’s intentions</li>
+    </ul>
+
+<a name="Clandestine Actions"><h1 style="padding-top: 48px; margin-top: -48px;">Clandestine Actions</h1></a>
+<p>The following actions are available to all creatures, and are used in situations of a clandestine nature.</p>
+
+  <a name="Avoid Notice">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Avoid Notice (Exploration) </h2></a>
+    <ul class="tag">
+      <li><b>Exploration</b></li>
+    </ul>
+    <p>You attempt to avoid notice while traveling at half speed. To remain undetected by creatures close enough to detect you passively, you roll against each of their passive Perception DCs as you encounter them. If creatures are attempting to seek in an area you pass through, they roll Perception against your passive Stealth DC. </p>
+
+  <a name="Conceal an Object">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Conceal an Object (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate, Secret</b></li>
+    </ul>
+    <p>You hide a small object on your person (such as a weapon of light Bulk). When you try to sneak a concealed object past someone who might notice it, the GM rolls your Stealth check and compares it to this passive observer’s Perception DC. Once the GM rolls your check for a concealed object, that same result is used no matter how many passive observers you try to sneak it past. If a creature is specifically searching you for an item, it can attempt a Perception check against your Stealth DC (finding the object on success). You can also conceal an object somewhere other than your person, such as among undergrowth or in a secret compartment within a piece of furniture. In this case, characters Seeking in an area compare their Perception check results to your Stealth DC to determine whether they find the object.</p>
+    <ul>
+      <li><b>Success:</b> The object remains undetected.</li>
+      <li><b>Failure:</b> The searcher finds the object.</li>
+    </ul>
+
+  <a name="Cover Tracks">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Cover Tracks (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Move</b></li>
+    </ul>
+    <p>You cover your tracks, moving up to half your travel speed. You don’t need to attempt a Survival check to cover your tracks, but anyone tracking you must succeed at a Survival check against your Survival DC if it is higher than the normal DC to Track.In some cases, you might Cover Tracks in an encounter. In this case, Cover Tracks is a single action and doesn’t have the exploration trait.</p>
+
+  <a name="Create Forgery">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Create Forgery (Downtime) </h2></a>
+    <ul class="tag">
+      <li><b>Downtime, Secret</b></li>
+    </ul>
+    <p>You create a forged document, usually over the course of a day or a week. You must have the proper writing material to create a forgery. When you Create a Forgery, the GM rolls a secret Society check, with a DC based on how rare or elaborate the document you are attempting to forge is. If you succeed, the forgery is of good enough quality that passive observers can’t notice the fake. Only those who carefully examine the document and attempt a Perception or Society check against your Society DC can do so.</p>
+    <p>If the document’s handwriting doesn’t need to be specific to a person, you need only to have seen a similar document before, and you gain up to a +4 circumstance bonus to your check, as well as to your DC (the GM determines the bonus). To forge a specific person’s handwriting, you need a sample of that person’s handwriting.</p>
+    <p>If your check result was below the DC, the forgery has some obvious signs of being a fake, so the GM compares your result to each passive observer’s Perception DC or Society DC, whichever is higher, using the success or failure results below. Once the GM rolls your check for a document, that same result is used against all passive observers’ DCs no matter how many creatures passively observe that document.</p>
+    <p>An observer who was fooled on a passive glance can still choose to closely scrutinize the documents on the lookout for a forgery, using different techniques and analysis methods beyond the surface elements you successfully forged with your original check. In that case, the observer can attempt a Perception or Society check against your Society DC (if they succeed, they know your document is a forgery).</p>
+    <ul>
+      <li><b>Success:</b> The observer does not detect the forgery.</li>
+      <li><b>Failure:</b> The observer knows your document is a forgery.</li>
+    </ul>
+
+  <a name="Hide">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Hide (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Secret</b></li>
+    </ul>
+    <p>You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed. The GM rolls your Stealth check in secret and compares the result to the Perception DC of each creature you’re observed by but that you have cover or greater cover against or are concealed from. You gain the circumstance bonus from cover or greater cover to your check.</p>
+    <ul>
+      <li><b>Success:</b> If the creature could see you, you’re now hidden from it instead of observed. If you were hidden from or undetected by the creature, you retain that condition.</li>
+    </ul>
+    <p>If you successfully become hidden to a creature but then cease to have cover or greater cover against it or be concealed from it, you become observed again. You cease being hidden if you do anything except Hide, Sneak, or Step. If you attempt to Strike a creature, the creature remains flat-footed against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise. The GM might allow you to perform a particularly unobtrusive action without being noticed, possibly requiring another Stealth check.</p>
+    <p>If a creature uses Seek to make you observed by it, you must successfully Hide to become hidden from it again. </p>
+
+  <a name="Palm an Object">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Palm an Object (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate </b></li>
+    </ul>
+    <p>Palming a small, unattended object without being noticed requires you to roll a single Thievery check against the Perception DCs of all creatures who are currently observing you. You take the object whether or not you successfully conceal that you did so. You can typically only Palm Objects of negligible Bulk, though the GM might determine otherwise depending on the situation.</p>
+    <ul>
+      <li><b>Success:</b> The creature does not notice you Palming the Object.</li>
+      <li><b>Failure:</b> The creature notices you Palming the Object, and the GM determines the creature’s response.</li>
+    </ul>
+
+  <a name="Pick a Lock">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Pick a Lock (2 actions, Contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+      <li><b>Requirements:</b> You have thieves’ tools.</li>
+    </ul>
+    <p>Opening a lock without a key is very similar to Disabling a Device, but the DC of the check is determined by the complexity and construction of the lock you are attempting to pick (locks and their DCs are found in their description). Locks of higher qualities might be complex locks, which require multiple successes in a row to unlock. If you lack the proper tools, the GM might let you use improvised picks, which are treated as shoddy tools, depending on the specifics of the lock. Make a Thievery check. </p>
+    <ul>
+      <li><b>Critical Success:</b> You unlock the lock, or you achieve two successes toward opening a complex lock. You leave no trace of your tampering.</li>
+      <li><b>Success:</b> You open the lock, or you achieve one success toward opening a complex lock.</li>
+      <li><b>Critical Failure:</b> You break your tools. Fixing them requires using Crafting to Repair them or else swapping in replacement picks.</li>
+    </ul>
+
+  <a name="Sneak">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Sneak (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move, Secret</b></li>
+    </ul>
+    <p>You can attempt to move to another place while becoming or staying undetected. Stride up to half your Speed. (You can use Sneak while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type; you must move at half that Speed.)</p>
+    <p>If you’re undetected by a creature and it’s impossible for that creature to observe you (for a typical creature, this includes when you’re invisible, the observer is blinded, or you’re in darkness and the creature can’t see in darkness), for any critical failure you roll on a check to Sneak, you get a failure instead. You also continue to be undetected if you lose cover or greater cover against or are no longer concealed from such a creature.</p>
+    <p>At the end of your movement, the GM rolls your Stealth check in secret and compares the result to the Perception DC of each creature you were hidden from or undetected by at the start of your movement. If you have cover or greater cover from the creature throughout your Stride, you gain the +2 circumstance bonus from cover (or +4 from greater cover) to your Stealth check. Because you’re moving, the bonus increase from Taking Cover doesn’t apply. You don’t get to roll against a creature if, at the end of your movement, you neither are concealed from it nor have cover or greater cover against it. You automatically become observed by such a creature.</p>
+    <ul>
+      <li><b>Success:</b> You’re undetected by the creature during your movement and remain undetected by the creature at the end of it.</li>
+        <ul>
+            <li>You become observed as soon as you do anything other than Hide, Sneak, or Step. If you attempt to Strike a creature, the creature remains flat-footed against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise. The GM might allow you to perform a particularly unobtrusive action without being noticed, possibly requiring another Stealth check. If you speak or make a deliberate loud noise, you become hidden instead of undetected.</li>
+            <li>If a creature uses Seek and you become hidden to it as a result, you must Sneak if you want to become undetected by that creature again.</li>
+        </ul>
+      <li><b>Failure:</b> A telltale sound or other sign gives your position away, though you still remain unseen. You’re hidden from the creature throughout your movement and remain so.</li>
+      <li><b>Critical Failure:</b> You’re spotted! You’re observed by the creature throughout your movement and remain so. If you’re invisible and were hidden from the creature, instead of being observed you’re hidden throughout your movement and remain so.</li>
+    </ul>
+
+  <a name="Steal">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Steal (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate </b></li>
+    </ul>
+    <p>You try to take a small object from another creature without being noticed. Typically, you can Steal only an object of negligible Bulk, and you automatically fail if the creature who has the object is in combat or on guard.</p>
+    <p>Attempt a Thievery check to determine if you successfully Steal the object. The DC to Steal is usually the Perception DC of the creature wearing the object. This assumes the object is worn but not closely guarded (like a loosely carried pouch filled with coins, or an object within such a pouch). If the object is in a pocket or similarly protected, you take a –5 penalty to your Thievery check. The GM might increase the DC of your check if the nature of the object makes it harder to steal (such as a very small item in a large pack, or a sheet of parchment mixed in with other documents).</p>
+    <p>You might also need to compare your Thievery check result against the Perception DCs of observers other than the person wearing the object. The GM may increase the Perception DCs of these observers if they’re distracted.</p>
+    <ul>
+      <li><b>Success:</b> You steal the item without the bearer noticing, or an observer doesn’t see you take or attempt to take the item.</li>
+      <li><b>Failure:</b> The item’s bearer notices your attempt before you can take the object, or an observer sees you take or attempt to take the item. The GM determines the response of any creature that notices your theft.</li>
+    </ul>
+
+<a name="Utility Actions"><h1 style="padding-top: 48px; margin-top: -48px;">Utility Actions</h1></a>
+<p>The following actions are available to all creatures, and are used in a variety of situations</p>
+
+<a name="Administer First Aid">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Administer First Aid (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Healing, Manipulate</b></li>
+      <li><b>Requirements:</b> You are holding healer's tools, or you are wearing them and have a hand free
+        You spend 10 minutes administering medical care on a creature (including yourself, if you choose). The DC of Administer First Aid is 7. The result of your Medicine check determines how many Hit Points the target regains.
+        </li>
+    </ul>
+    <p></p>
+    <ul>
+      <li><b>Critical Success:</b> The target is restored to full hit points. </li>
+      <li><b>Success:</b> The target regains a number of hit points equal to their grevious wound threshold (unmodified by armor.) </li>
+      <li><b>Critical Failure:</b> The target takes 1d8 damage.</li>
+    </ul>
+
+  <a name="Aid">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Aid (Reaction)</h2></a>
+    <ul class="tag">
+      <li><b>Trigger:</b> An ally is about to use an action that requires a skill check or attack roll.</li>
+      <li><b>Requirements:</b> The ally is willing to accept your aid, and you have prepared to help (see below).
+        You try to help your ally with a task. To use this reaction, you must first prepare to help, usually by using an action during your turn. You must explain to the GM exactly how you’re trying to help, and they determine whether you can Aid your ally. When you use your Aid reaction, attempt a skill check or attack roll of a type decided by the GM. The typical DC is 10 or the DC of the task, whichever is lower, but the GM might adjust this DC for particularly hard or easy tasks. The GM can add any relevant traits to your preparatory action or to your Aid reaction depending on the situation, or even allow you to Aid checks other than skill checks and attack rolls.
+        </li>
+    </ul>
+    <p></p>
+    <ul>
+      <li><b>Critical Success:</b> You grant your ally a +2 circumstance bonus to the triggering check.</li>
+      <li><b>Success:</b> You grant your ally a +1 circumstance bonus to the triggering check.</li>
+      <li><b>Critical Failure:</b> Your ally takes a –1 circumstance penalty to the triggering check.</li>
+    </ul>
+
+  <a name="Assess Structures">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Assess Structures (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Secret</b></li>
+    </ul>
+    <p>You can use Engineering to assess a structure or a piece of machinery or a structure to determine its stability, usability, and structural weak points. </p>
+    <ul>
+      <li><b>Critical Success:</b> You learn the hit points, broken threshold, hardness, etc of the machine or structure. You also learn structural weaknesses and general stability. </li>
+      <li><b>Success:</b> You learn EITHER the stability of the machine or structure (it's HP, broken threshold, hardness and general stability) OR its structural weaknesses / weak points. </li>
+      <li><b>Critical Failure:</b> You gain wrong information.</li>
+    </ul>    
+
+  <a name="Avert Gaze">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Avert Gaze (1 action)</h2></a>
+    <p>You avert your gaze from danger. You gain a +2 circumstance bonus to defenses against visual abilities that require you to look at a creature or object, such as a medusa’s petrifying gaze. Your gaze remains averted until the start of your next round.</p>
+
+  <a name="Connect the Dots">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Connect the Dots (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>You take ten minutes considering multiple clues you are aware of, then attempt an investigation check to decipher how connected they are. If any clues are creatures, this check usually uses the highest DC among their Deception and Will DCs. Otherwise the DC will be based on how tangential the connections are. Once you try to Connect the Dots between particular clues, you can never try to Connect the Dots between those same clues again unless the GM allows it after you've learned a substantial amount of new information. If you spend at least one day considering your clues, using a visual aid such as a board with red strings connecting representations of the clues, you get a +2 circumstance bonus to this check.</p>
+    <ul>
+      <li><b>Critical Success:</b> The GM tells you how connected the various clues are to one another: highly connected, somewhat connected, tangentially connected, or not connected. The GM also tells you one specific way in which they're connected, if they are.</li>
+      <li><b>Success:</b> As critical success, but the GM doesn't tell you a specific connection.</li>
+      <li><b>Failure:</b> Your results are inconclusive.</li>
+      <li><b>Critical Failure:</b> You misconstrue the information. As a success but the GM provides an incorrect degree of connection.</li>
+    </ul>
+
+  <a name="Create a Diversion">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Create a Diversion (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Mental</b></li>
+      <li><b>Chained:</b> You can chain this action into the Step, Tumble Away, Hide, Sneak, or Attack activities.</li>
+    </ul>
+    <p>With a gesture, a trick, or some distracting words, you can create a diversion that draws creatures' attention elsewhere. If you use a gesture or trick, this action gains the manipulate trait. If you use distracting words, it gains the auditory and linguistic traits. Attempt a single Deception check and compare it to the Perception DCs of the creatures whose attention you're trying to divert. Whether or not you succeed, creatures you attempt to divert gain a +4 circumstance bonus to their Perception DCs against your attempts to Create a Diversion for 1 minute.</p>
+    <ul>
+      <li><b>Success:</b> You become hidden to each creature whose Perception DC is less than or equal to your result. (The hidden condition allows you to Sneak away.) This lasts until the end of your next turn or until you do anything except Step or use the Hide or the Sneak action of the Stealth skill. If you Strike a creature, the creature remains flat-footed against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise.</li>
+      <li><b>Failure:</b> You don’t divert the attention of any creatures whose Perception DC exceeds your result, and those creatures are aware you were trying to trick them.</li>
+    </ul>
+
+  <a name="Disable Device">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Disable Device (2 actions, Contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+      <li><b>Requirements:</b> Some devices require you to use tools when disabling them.</li>
+    </ul>
+    <p>This action allows you to disarm a trap or another complex device. Often, a device requires numerous successes before becoming disabled, depending on its construction and complexity. Proper tools are helpful and sometimes even required to Disable a Device. Your Thievery check result determines how much progress you make.</p>
+    <ul>
+      <li><b>Critical Success:</b> You disable the device, or you achieve two successes toward disabling a complex device. You leave no trace of your tampering, and you can rearm the device later, if that type of device can be rearmed.</li>
+      <li><b>Success:</b> You disable the device, or you achieve one success toward disabling a complex device.</li>
+      <li><b>Critical Failure:</b> You trigger the device.</li>
+    </ul>
+
+  <a name="Dismiss">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Dismiss (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate</b></li>
+    </ul>
+    <p>You end one effect (such as from a special ability, spell, or magic item). This must be an effect you are allowed to dismiss, as defined by the ability, spell or item. Dismissal might end the effect entirely or might end it just for a certain target or targets, depending on the spell or item.</p>
+
+  <a name="Escape">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Escape (1 action)</h2></a>
+    <p>You attempt to escape from being grabbed, immobilized, or restrained. Choose one creature, object, effect, hazard, or other impediment imposing any of those conditions on you. Attempt a check using your unarmed attack modifier against the DC of the effect. This is typically the Athletics DC of a creature grabbing you, the Thievery DC of a creature who tied you up, the spell DC for a spell effect, or the listed Escape DC of an object, hazard, or other impediment. You can attempt an Acrobatics or Athletics check instead of using your attack modifier if you choose.</p>
+    <ul>
+      <li><b>Critical Success:</b> You get free and remove the grabbed, immobilized, and restrained conditions imposed by your chosen target. You can then Stride 5 feet. </li>
+      <li><b>Success:</b> You get free and remove the grabbed, immobilized, and restrained conditions imposed by your chosen target.</li>
+      <li><b>Failure:</b> You don’t get free, and you have a -2 circumstance penalty to further attempts this round.</li>
+      <li><b>Critical Failure:</b> You don’t get free, and you can’t attempt to Escape again until your next turn.</li>
+    </ul>
+
+  <a name="Examine Clue">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Examine Clue (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentration, Exploration, Secret</b></li>
+    </ul>
+    <p>You take ten minutes to contemplate a clue, then make an Investigation check.</p>
+    <ul>
+      <li><b>Critical Success:</b> The GM tells you how important the clue is: highly important, somewhat important, tangentially important, or not important. The GM also tells you one reason the clue is important, if it is.</li>
+      <li><b>Success:</b> As critical success, but the GM doesn't tell you a reason.</li>
+      <li><b>Failure:</b> Your results are inconclusive.</li>
+      <li><b>Critical Failure:</b> You misconstrue the information. As a success, but the GM provides incorrect information. </li>
+    </ul>
+
+  <a name="Force Open">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Force Open (1 Action) </h2></a>
+    <p>Using your body, a lever, or some other tool, you attempt to forcefully open a door, window, container or heavy gate. With a high enough result, you can even smash through walls. Without a crowbar, prying something open takes a –2 item penalty to the Athletics check to Force Open. In some cases, at the GM’s discretion, a particularly heavy or stuck target may require more actions, maybe even multiple rounds.</p>
+    <ul>
+      <li><b></b>Critical Success: You open the door, window, container, or gate and can avoid damaging it in the process.</li>
+      <li><b></b>Success: You break the door, window, container, or gate open, and the door, window, container, or gate gains the broken condition. If it’s especially sturdy, the GM might have it take damage but not be broken.</li>
+      <li><b></b>Failure: Your attempt jams the door, window, container, or gate shut, imposing a –2 circumstance penalty on future attempts to Force it Open.</li>
+      <li><b></b>Critical Failure: As Failure, but you, personally, cannot find the purchase to open the target. You cannot try again for 1 day. </li>
+    </ul>
+    <p>Sample Force Open Tasks</p>
+    <ul class="sampleDC">
+        <li>DC 3: fabric, flimsy glass</li>
+        <li>DC 6:  ice, sturdy glass</li>
+        <li>DC 9:  flimsy wooden door, wooden portcullis</li>
+    </ul>
+    <p>Specialized Only:</p>
+    <ul class="sampleDC">
+        <li>DC 13:  sturdy wooden door, iron portcullis, metal bar</li>
+        <li>DC 18:  stone or iron door</li>
+    </ul>
+
+  <a name="Interact">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Interact (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+    </ul>
+    <p>You use your hand or hands to manipulate an object or the terrain. You can grab an unattended or stored object, open a door, or produce some similar effect. You might have to attempt a skill check to determine if your Interact action was successful.</p>
+
+  <a name="Perform Surgery">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Perform Surgery (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Healing, Manipulate</b></li>
+      <li><b>Requirements:</b> You are holding healer's tools, or you are wearing them and have a hand free</li>
+    </ul>
+    <p>You spend three hours attempting to treat a serious or grievous wound. Make a  Medicine check. The DC is 25 for a serious wound, and 30 for a grievous one. </p>
+    <ul>
+      <li><b>Critical Success:</b> You repair the injury, setting or reattaching the limb, stopping the internal bleeding, or the like. This fully removes the wound, though some effects may require magic to fully recover from. </li>
+      <li><b>Success:</b> You move the injury in the right direction. There are three options:</li>
+      <ul>
+        <li>If the patient remains resting in your care for 24 hours, you can attempt this roll again with a +4 to the check (until you critically succeed, fail or critically fail, this bonus continues to stack each day.) </li>
+        <li>You reduce the number of full rest requirements before the natural healing flat check can be made by 2. </li>
+        <li>If the patient is currently in the stage of natural recovery where they are making flat checks, they immediately succeed.</li>
+      </ul>
+      <li><b>Failure:</b> You fail to improve the injury.</li>
+      <li><b>Critical Failure:</b> You actually make the injury worse. Increase the DC to perform future surgery on the injury by 4, and increase the number of full rests required before a natural flat check by 2.</li>
+    </ul>
+
+  <a name="Point Out">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Point Out (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Manipulate, Visual</b></li>
+      <li><b>Requirements:</b> A creature is undetected by one or more of your allies but isn’t undetected by you.</li>
+    </ul>
+    <p>You indicate a creature that you can see to one or more allies, gesturing in a direction and describing the distance verbally. That creature is hidden to your allies, rather than undetected. This works only for allies who can see you and are in a position where they could potentially detect the target. If your allies can’t hear or understand you, they must succeed at a Perception check against the creature’s Stealth DC or they misunderstand and believe the target is in a different location.</p>
+
+  <a name="Power Lift">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Power Lift (2 actions, contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+    </ul>
+    <p>You attempt to lift more weight than your normal maximum lift amount. Make a DC 6 Athletics check.</p>
+    <ul>
+      <li><b>Critical Success:</b> You lift double your lift limit</li>
+      <li><b>Success:</b> You lift 50% more than your lift limit.</li>
+      <li><b>Failure:</b> You cannot lift more than your lift limit.</li>
+      <li><b>Critical Failure:</b> As failure, and you injure yourself. Take 2d8 points of damage.</li>
+    </ul>    
+
+  <a name="Recall Knowledge">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Recall Knowledge (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Secret</b></li>
+    </ul>
+    <p>To remember useful information on a topic, you can attempt to Recall Knowledge. You might know basic information about something without needing to attempt a check, but Recall Knowledge requires you to stop and think for a moment so you can recollect more specific facts and apply them. You might even need to spend time investigating first. For instance, to use Medicine to learn the cause of death, you might need to conduct a forensic examination before attempting to Recall Knowledge.</p>
+    <ul>
+      <li><b>Critical Success:</b> You recall the knowledge accurately and gain additional information or context.</li>
+      <li><b>Success:</b> You recall the knowledge accurately or gain a useful clue about your current situation.</li>
+      <li><b>Failure:</b> You don’t recall the knowledge, and cannot try again for 1 day.</li>
+      <li><b>Critical Failure:</b> You recall incorrect information or gain an erroneous or misleading clue. You cannot try again until you have time to research the subject again, often requiring specialized books or libraries.</li>
+    </ul>
+    <p></p>
+    <ul class="sampleDC">
+        <li>DC 3: name of a ruler, key noble, or major deity</li>
+        <li>DC 6: line of succession for a major noble family, core doctrines of a major deity</li>
+        <li>DC 9: genealogy of a minor noble, teachings of an ancient priest</li>
+        <li>DC 13: hierarchy of a genie noble court, major extra-planar temples of a deity</li>
+        <li>DC 18: existence of a long-lost noble heir, secret doctrines of a religion</li>
+      </ul>
+
+  <a name="Reconstruct the Scene">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Reconstruct the Scene (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>You take time surveying a small location (such as a single room) to get an impression of significant events occurred there (how far back depends on how ‘disturbed the crime scene’ is), or surveying an object (such as a discarded cloak) to get an impression of what the item had been used to do, where it had been, or what clues can be uncovered from it (how far back these clues can be depend on how impactful they were to the cloak - for example, a small bit of mud may not last more than a day or two on the cloak.) </p>
+    <p>This involves moving about the area and studying footprints, the placement of objects, spilled drinks or blood, and so forth, or overturning and carefully examining the object thoroughly. </p>
+    <ul>
+      <li><b>Critical Success:</b> As success below, but you also are able to know which clue or piece of information is the most valuable to your investigation</li>
+      <li><b>Success:</b> You get clues and details of the past, including the overall events and their time frame, but it's not a perfect record. This also isn't enough to identify who was involved in these events if you weren't already aware the person was there (or the clue isn’t directly linkable to them - like a specific pattern on a cloak fragment that you recognize as the same cloak the sheriff was wearing). As determined by the GM, you also pick out various seemingly small details that could serve as important clues, like a memorable weapon someone used for a murder or the type of cloak someone wore when passing through.</li>
+      <li><b>Failure:</b> You're unable to uncover any useful information</li>
+      <li><b>Critical Failure:</b> As success, but you you get incorrect information</li>
+    </ul>
+
+  <a name="Seek">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Seek (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Secret</b></li>
+    </ul>
+    <p>You scan an area for signs of creatures or objects. If you're looking for creatures, choose an area you're scanning. If precision is necessary, the GM can have you select a 30-foot cone or a 15-foot burst within line of sight. You might take a penalty if you choose an area that's far away.</p>
+    <p>If you're using Seek to search for objects (including secret doors and hazards), you search up to a 10-foot square adjacent to you. The GM might determine you need to Seek as an activity, taking more actions or even minutes or hours if you're searching a particularly cluttered area.</p>
+    <p>The GM attempts a single secret Perception check for you and compares the result to the Stealth DCs of any undetected or hidden creatures in the area or the DC to detect each object in the area (as determined by the GM or by someone Concealing the Object). A creature you detect might remain hidden, rather than becoming observed, if you're using an imprecise sense or if an effect (such as invisibility) prevents the subject from being observed.</p>
+    <ul>
+      <li><b>Critical Success:</b> If you were searching for creatures, any undetected or hidden creature you critically succeeded against becomes observed by you. If you were searching for an object, you learn its location.</li>
+      <li><b>Success:</b> If you were searching for creatures, any undetected creature you succeeded against becomes hidden from you instead of undetected, and any hidden creature you succeeded against becomes observed by you. If you were searching for an object, you learn its location or get a clue to its whereabouts, as determined by the GM.</li>
+    </ul>
+
+  <a name="Sense Direction">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Sense Direction (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Secret</b></li>
+    </ul>
+    <p>Using the stars, the position of the sun, traits of the geography or flora, or the behavior of fauna, you can stay oriented in the wild. Typically, you attempt a Survival check only once per day, but some environments or changes might necessitate rolling more often. The GM determines the DC and how long this activity takes (usually just a minute or so). More unusual locales or those you’re unfamiliar with might require you to have a minimum proficiency rank to Sense Direction. Without a compass, you take a –2 item penalty to checks to Sense Direction.</p>
+    <ul>
+      <li><b>Critical Success:</b> You get an excellent sense of where you are. If you are in an environment with cardinal directions, you know them exactly.</li>
+      <li><b>Success:</b> You gain enough orientation to avoid becoming hopelessly lost. If you are in an environment with cardinal directions, you have a sense of those directions.</li>
+    </ul>
+    <p>Sample Sense Direction Tasks</p>
+    <ul class ="sampleDC">
+        <li>No Roll: determine a cardinal direction using the sun</li>
+        <li>DC 6: find an overgrown path in a forest</li>
+        <li>DC 9:  navigate a hedge maze</li>
+        <li>DC 12:  navigate a byzantine labyrinth or relatively featureless desert</li>
+        <li>DC 15:  navigate an ever-changing dream realm</li>
+    </ul>
+
+  <a name="Stabilize Injuries">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Stabilize Injuries (2 actions)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+      <li><b>Requirements:</b> You are holding healer's tools, or you are wearing them and have a hand free</li>
+    </ul>
+    <p>You perform emergency medical techniques on an adjacent creature that is dying or bleeding. If a creature is both dying and bleeding, choose which ailment you’re trying to treat before you roll. You can Administer First Aid again to attempt to remedy the other effect.</p>
+    <ul class="sampleDC">
+      <li><b>Stabilize:</b> Attempt a Medicine check on a creature that has 0 Hit Points and the dying condition. The DC is equal to that creature’s recovery roll DC</li>
+      <li><b>Stop Bleeding:</b> Attempt a Medicine check on a creature that is taking persistent bleed damage, giving them a chance to make another flat check to remove the persistent damage. The DC is usually the DC of the effect that caused the bleed.</li>
+    </ul>
+    <p>Outcomes based on your Medicine Check:</p>
+    <ul>
+        <li><b>Success:</b> If you’re trying to stabilize, the creature loses the dying condition (but remains unconscious). If you’re trying to stop bleeding, the creature attempts a flat check to end the bleeding.</li>
+        <li><b>Critical Failure:</b> If you were trying to stabilize, the creature’s dying value increases by 1. If you were trying to stop bleeding, it immediately takes an amount of damage equal to its persistent bleed damage.</li>
+    </ul>
+
+  <a name="Subsist">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Subsist (Downtime)</h2></a>
+    <ul class="tag">
+      <li><b>Downtime</b></li>
+    </ul>
+    <p>If you need to provide food and shelter, you can use the Subsist downtime activity. This typically uses Survival if you’re in the wild. You try to provide food and shelter for yourself, and possibly others as well, with a standard of living. The GM determines the DC based on the nature of the place where you're trying to Subsist. Unlike most downtime activities, you can Subsist after 8 hours or less of exploration, but if you do, you take a –5 penalty.</p>
+    <ul>
+      <li><b>Critical Success:</b> You either provide a subsistence living for yourself and one additional creature, or you improve your own food and shelter, granting yourself a comfortable living.</li>
+      <li><b>Success:</b> You find enough food and shelter with basic protection from the elements to provide you a subsistence living.</li>
+      <li><b>Failure:</b> You’re exposed to the elements and don’t get enough food, becoming fatigued until you attain sufficient food and shelter.</li>
+      <li><b>Critical Failure:</b> You attract trouble, eat something you shouldn’t, or otherwise worsen your situation. You take a –2 circumstance penalty to checks to Subsist for 1 week. You don’t find any food at all; if you don’t have any stored up, you’re in danger of starving or dying of thirst if you continue failing.</li>
+    </ul>
+    <ul class="sampleDC">
+        <li>No Roll: lush forest with calm weather or large city with plentiful resources</li>
+        <li>DC 6:  typical hillside or village</li>
+        <li>DC 9:  typical mountains or insular hamlet</li>
+        <li>DC 12:  typical desert or city under siege</li>
+        <li>DC 15:  barren wasteland or city of undead</li>
+    </ul>
+
+  <a name="Track">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Track (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Move</b></li>
+    </ul>
+    <p>You follow tracks, moving at up to half your travel speed. After a successful check to Track, you can continue following the tracks at half your Speed without attempting additional checks for up to 1 hour. In some cases, you might Track in an encounter. In this case, Track is a single action and doesn’t have the exploration trait, but you might need to roll more often because you’re in a tense situation. The GM determines how often you must attempt this check. You attempt your Survival check when you start Tracking, once every hour you continue tracking, and any time something significant changes in the trail. The GM determines the DCs for such checks, depending on the freshness of the trail, the weather, and the type of ground.</p>
+    <ul>
+      <li><b>Success:</b> You find the trail or continue to follow the one you’re already following.</li>
+      <li><b>Failure:</b> You lose the trail but can try again after a 1-hour delay.</li>
+      <li><b>Critical Failure:</b> You lose the trail and can’t try again for 24 hours.</li>
+    </ul>
+    <p>Sample Track Tasks</p>
+    <ul class="sampleDC">
+        <li>No roll: the path of a large army following a road</li>
+        <li>DC 4: relatively fresh tracks of a rampaging bear through the plains</li>
+        <li>DC 8: a nimble panther's tracks through a jungle, tracks obscured by rainfall</li>
+        <li>DC 12: tracks obscured by winter snow, tracks of a mouse or smaller creature, tracks left on surfaces that can't hold prints like bare rock</li>
+        <li>DC 16: old tracks through a windy desert’s sands, tracks after a major blizzard or hurricane</li>
+    </ul>
+
+  <a name="Treat Poison">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Treat Poison (1 actions)</h2></a>
+    <ul class="tag">
+      <li><b>Manipulate</b></li>
+      <li><b>Requirements:</b> You are holding healer's tools, or you are wearing them and have a hand free</li>
+    </ul>
+    <p>You treat a patient to prevent the spread of poison. Attempt a Medicine check against the poison’s DC. After you attempt to Treat a Poison for a creature, you can’t try again until after the next time that creature attempts a save against the poison.</p>
+    <ul>
+      <li><b>Critical Success:</b> You grant the creature a +4 circumstance bonus to its next saving throw against the poison.</li>
+      <li><b>Success:</b> You grant the creature a +2 circumstance bonus to its next saving throw against the poison.</li>
+      <li><b>Critical Failure:</b> Your efforts cause the creature to take a –2 circumstance penalty to its next save against the poison.</li>
+    </ul>
+
+<a name="Environmental Movement"><h1 style="padding-top: 48px; margin-top: -48px;">Environmental Movement</h1></a>
+<p>The following movement actions are available to all creatures, but are typically used outside of tactical encounters</p>
+
+  <a name="Arrest a Fall">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Arrest a Fall (Reaction)</h2></a>
+    <ul class="tag">
+      <li><b>Trigger:</b> You fall.</li>
+      <li><b>Requirements:</b> You have a fly Speed.</li>
+    </ul>
+    <p>You attempt an Acrobatics check to slow your fall. The DC is typically 6, but it might be higher due to air turbulence or other circumstances.</p>
+    <ul>
+      <li><b>Success:</b> You fall gently, taking no damage from the fall.</li>
+    </ul>
+
+  <a name="Balance">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Balance (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Requirements:</b> You are on a narrow surface, uneven ground, or another similar feature.</li>
+    </ul>
+    <p>You move across a narrow surface or uneven ground, attempting an Acrobatics check against its Balance DC. You are flat-footed while on a narrow surface or uneven ground.</p>
+    <ul>
+      <li><b>Critical Success:</b>Critical Success: You move up to your Speed.</li>
+      <li><b>Success:</b> You move up to your Speed, treating it as difficult terrain (every 5 feet costs 10 feet of movement).</li>
+      <li><b>Failure:</b> You must remain stationary to keep your balance (wasting the action) or you fall. If you fall, your turn ends.</li>
+      <li><b>Critical Failure:</b> You fall and your turn ends.</li>
+    </ul>
+
+  <a name="Climb">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Climb (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Requires:</b> You have both hands free.</li>
+    </ul>
+    <p>You move up, down, or across an incline. Unless it’s particularly easy, you must attempt an Athletics check. The GM determines the DC based on the nature of the incline and environmental circumstances. You’re flat-footed unless you have a climb Speed.</p>
+    <ul>
+      <li><b>Critical Success:</b> You move up, across, or safely down the incline for 5 feet plus 5 feet per 20 feet of your land Speed (a total of 10 feet for most PCs).</li>
+      <li><b>Success:</b> You move up, across, or safely down the incline for 5 feet per 20 feet of your land Speed (a total of 5 feet for most PCs, minimum 5 feet if your Speed is below 20 feet).</li>
+      <li><b>Critical Failure:</b> You fall. If you began the climb on stable ground, you fall and land prone.</li>
+    </ul>    
+    <p>Sample Climb Tasks</p>
+    <ul class="sampleDC">
+      <li>DC 3:  ladder, steep slope, low-branched tree</li>
+      <li>DC 6:  rigging, rope, typical tree</li>
+      <li>DC 9:  wall with small handholds and footholds</li>
+      <li>DC 12:  ceiling with handholds and footholds, rock wall</li>
+    </ul>
+    <p>Specialized Only: </p>
+    <ul class="sampleDC">
+        <li>DC 15:  smooth surface</li>
+    </ul>
+
+  <a name="Grab an Edge">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Grab an Edge (Reaction)</h2></a>
+    <ul class="tag">
+      <li><b>Trigger:</b> You fall from or past an edge or handhold.</li>
+      <li><b>Special:</b> you can release an item you are holding as part of this reaction.</li>
+      <li><b>Requirements:</b> Your hands are not tied behind your back or otherwise restrained</li>
+    </ul>
+    <p>When you fall off or past an edge or other handhold, you can try to grab it, potentially stopping your fall. You must succeed at a Reflex defense, usually at the Climb DC. If you grab the edge or handhold, you can then Climb up using Athletics. </p>
+    <ul>
+      <li><b>Critical Success:</b> You grab the edge or handhold, whether or not you have a hand free, typically by using a suitable held item to catch yourself (catching a battle axe on a ledge, for example). You still take damage from the distance fallen so far, but you treat the fall as though it were 30 feet shorter.</li>
+      <li><b>Success:</b> If you have at least one hand free, you grab the edge or handhold, stopping your fall. You still take damage from the distance fallen so far, but you treat the fall as though it were 20 feet shorter. If you have no hands free, you continue to fall as if you had failed the check.</li>
+      <li><b>Critical Failure:</b> You continue to fall, and if you’ve fallen 20 feet or more before you use this reaction, you take 10 bludgeoning damage from the impact for every 20 feet fallen.</li>
+    </ul>    
+
+  <a name="High Jump">
+    <h2 style="padding-top: 48px; margin-top: -48px;">High Jump (2 Actions, Contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You <a href="#Stride">Stride</a>, then make a vertical <a href="#Leap">Leap</a> and attempt a DC 10 Athletics check to increase the height of your jump. If you don't Stride at least 10 feet, you automatically fail your check. This DC might be increased or decreased due to the situation, as determined by the GM.</p>
+    <ul>
+      <li><b>Critical Success:</b> Increase the maximum vertical distance to 8 feet, or increase the maximum vertical distance to 5 feet and maximum horizontal distance to 10 feet.</li>
+      <li><b>Success:</b> Increase the maximum vertical distance to 5 feet.</li>
+      <li><b>Failure:</b> You Leap normally.</li>
+      <li><b>Critical Failure:</b> You don’t Leap at all, and instead you fall prone in your space.</li>
+    </ul>
+
+  <a name="Hustle">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Hustle (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Move</b></li>
+    </ul>
+    <p>You strain yourself to move at double your travel speed. Characters specialized in Athletics can hustle for half an hour, those who aren’t can only hustle for ten minutes. Once you hustle, you cannot do so again until you rest for an hour. </p>
+
+  <a name="Leap">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Leap (1 action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You take a careful, short jump. You can Leap up to 10 feet horizontally if your Speed is at least 15 feet, or up to 15 feet horizontally if your Speed is at least 30 feet. You land in the space where your Leap ends (meaning you can typically clear a 5-foot gap, or a 10-foot gap if your Speed is 30 feet or more). If you Leap vertically, you can move up to 3 feet vertically and 5 feet horizontally onto an elevated surface. Jumping a greater distance requires using the Athletics skill.</p>
+
+  <a name="Long Jump">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Long Jump (2 Actions, Contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You Stride, then make a horizontal Leap and attempt an Athletics check to increase the length of your jump. The higher you roll, the further you leap. You can’t Leap farther than your Speed. If you don't Stride at least 10 feet, or if you attempt to jump in a different direction than your Stride, you automatically fail your check. This DC might be increased or decreased due to the situation, as determined by the GM. On a natural 1, You Leap normally, but then fall and land prone.</p>
+    <p>If you aren’t specialized in athletics, you leap normally, plus an additional foot per 4 points you roll on the d20 (so +1 foot on a 4, +2 feet on an 8, +3 feet on a 12, +4 feet on a 16, and +5 feet on a 20.)</p>
+    <p>If you are specialized in athletics, you leap normally, plus an additional 2 points for each 1 you roll on the d20 (so +1 foot on a 2, +2 feet on a 4, +3 feet on a 6, and so on.)</p>
+
+  <a name="Maneuver in Flight">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Maneuver in Flight (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+      <li><b>Requires:</b> You have a fly speed</li>
+    </ul>
+    <p>You try a difficult maneuver while flying. Attempt an Acrobatics check. The GM determines what maneuvers are possible, but they rarely allow you to move farther than your fly Speed.</p>
+    <ul>
+      <li><b>Success:</b> You succeed at the maneuver.</li>
+      <li><b>Failure:</b> Your maneuver fails. The GM chooses if you simply can’t move or if some other detrimental effect happens. The outcome should be appropriate for the maneuver you attempted (for instance, being blown off course if you were trying to fly against a strong wind).</li>
+      <li><b>Critical Failure:</b> As failure, but the consequence is more dire.</li>
+    </ul>
+    <p>Sample Maneuver in Flight Tasks</p>
+    <ul class="sampleDC">
+        <li>Trained steep ascent or descent</li>
+        <li>Expert fly against the wind, hover midair</li>
+        <li>Master reverse direction</li>
+        <li>Legendary fly through gale force winds</li>
+    </ul>
+
+  <a name="Squeeze">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Squeeze (exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Move</b></li>
+    </ul>
+    <p>You contort yourself to squeeze through a space so small you can barely fit through. This action is for exceptionally small spaces; many tight spaces are difficult terrain that you can move through more quickly and without a check.</p>
+    <ul>
+      <li><b>Critical Success:</b> You squeeze through the tight space in 1 minute per 10 feet of squeezing.</li>
+      <li><b>Success:</b> You squeeze through in 1 minute per 5 feet.</li>
+      <li><b>Critical Failure:</b> You become stuck in the tight space. While you’re stuck, you can spend 1 minute attempting another Acrobatics check at the same DC. Any result on that check other than a critical failure causes you to become unstuck.</li>
+    </ul>
+    <p>Sample Squeeze Tasks</p>
+    <ul class="sampleDC">
+        <li>DC 5:  space barely fitting your shoulders</li>
+        <li>DC 11:  space barely fitting your head</li>
+    </ul>
+
+  <a name="Swim">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Swim (1 Action)</h2></a>
+    <ul class="tag">
+      <li><b>Move</b></li>
+    </ul>
+    <p>You propel yourself through water. In most calm water, you succeed at the action without needing to attempt a check. If you must breathe air and you’re submerged in water, you must hold your breath each round. If you fail to hold your breath, you begin to drown. If the water you are swimming in is turbulent or otherwise dangerous, you might have to attempt an Athletics check to Swim. If you end your turn in water and haven’t succeeded at a Swim action that turn, you sink 10 feet or get moved by the current, as determined by the GM. However, if your last action on your turn was to enter the water, you don’t sink or move with the current that turn.</p>
+    <ul>
+      <li><b>Critical Success:</b> You move through the water 10 feet, plus 5 feet per 20 feet of your land Speed (a total of 15 feet for most PCs).</li>
+      <li><b>Success:</b> You move through the water 5 feet, plus 5 feet per 20 feet of your land Speed (a total of 10 feet for most PCs).</li>
+      <li><b>Critical Failure:</b> You make no progress, and if you’re holding your breath, you lose 1 round of air.</li>
+    </ul>
+    <p>Sample Swim Tasks</p>
+    <ul class="sampleDC">
+        <li>DC 3:  lake or other still water</li>
+        <li>DC 6:  flowing water, like a river</li>
+        <li>DC 9:  swiftly flowing river</li>
+        <li>DC 13:  stormy sea</li>
+        <li>DC 18:  maelstrom, waterfall</li>
+    </ul>
+
+    <a name="Exploration Mode Activities"><h1 style="padding-top: 48px; margin-top: -48px;">Exploration Mode Activities</h1></a>
+    <p>The following activities are available to all creatures.</p>
+
+    <a name="Create Artwork">
+        <h2 style="padding-top: 48px; margin-top: -48px;">Create Artwork (Exploration or Downtime)</h2></a>
+        <ul class="tag">
+          <li><b>Concentrate, Exploration or Downtime</b></li>
+        </ul>
+        <p>You either spend ten minutes preparing a piece of art (a sketch, a culinary delight, calligraphy, or the like) or spend a longer stretch of downtime working on it (typically for paintings, composing - but not performing - music, sculpture, etc). The default DC is usually based on the Quality Spectrum, with bonuses added based on how much time you have put into the work. Creating Artwork rarely has an impact on its own, but it might influence the DCs of subsequent Diplomacy checks against those who enjoy it—or even change their attitudes—if the GM sees fit.</p>
+        <ul>
+          <li><b>Critical Success:</b> Your artwork impresses the observers, and they’re likely to share stories of your ability.</li>
+          <li><b>Success:</b> You prove yourself, and observers appreciate the quality of your artwork.</li>
+          <li><b>Failure:</b> Your artwork falls flat.</li>
+          <li><b>Critical Failure:</b> Something about your artwork really turns people away.</li>
+        </ul>
+        <p></p>
+        <ul class="sampleDC">
+          <li>Up to 1 hour: None</li>
+          <li>Up to 12 hours: +1 Circumstance Bonus</li>
+          <li>Up to 48 hours: +2 Circumstance Bonus</li>
+          <li>Up to 200 hours: +3 Circumstance Bonus</li>
+          <li>Up to 500 hours: +4 Circumstance Bonus</li>
+        </ul>    
+
+  <a name="Decipher Writing">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Decipher Writing (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>When you encounter particularly archaic or esoteric texts, the GM might require you to Decipher the Writing before you can understand it. You must be trained in the relevant skill to Decipher Writing. Arcana is typically used for writing about magic or science, Culture for esoteric texts about mysteries, philosophy or scripture, and Administration for coded messages or archaic documents.</p>
+    <p>You attempt to decipher complicated writing or literature on an obscure topic. This usually takes 1 minute per page of text, but might take longer (typically an hour per page for decrypting ciphers or the like). The text must be in a language you can read, though the GM might allow you to attempt to decipher text written in an unfamiliar language using Society instead.</p>
+    <p>The DC is determined by the GM based on the state or complexity of the document. The GM might have you roll one check for a short text or a check for each section of a larger text.</p>
+    <ul>
+      <li><b>Critical Success:</b> You understand the true meaning of the text.</li>
+      <li><b>Success:</b> You understand the true meaning of the text. If it was a coded document, you know the general meaning but might not have a word-for-word translation.</li>
+      <li><b>Failure:</b> You can’t understand the text and take a –2 circumstance penalty to further checks to decipher it.</li>
+      <li><b>Critical Failure:</b> You believe you understand the text on that page, but you have in fact misconstrued its message.</li>
+    </ul>
+    <p>Sample Decipher Writing Tasks</p>
+    <ul>
+        <li>DC 4: entry-level philosophy treatise</li>
+        <li>DC 9: complex code, such as a cipher</li>
+        <li>DC 13:  spymaster’s code or advanced research notes</li>
+        <li>DC 18:  esoteric planar text written in metaphor by an ancient celestial</li>
+      </ul>
+
+  <a name="Defend">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Defend (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration</b></li>
+    </ul>
+    <p>You move at half your travel speed with your shield raised. If combat breaks out, you gain the benefits of Raising a Shield before your first turn begins.</p>
+
+  <a name="Follow the Expert">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Follow the Expert (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Auditory, Concentrate, Exploration, Visual</b></li>
+    </ul>
+    <p>Choose an ally attempting a recurring skill check while exploring, such as climbing, or performing a different exploration tactic that requires a skill check (like Avoiding Notice). The ally must be specialized in the skill used and must be willing to provide assistance. While Following the Expert, you match their tactic or attempt similar skill checks. Thanks to your ally’s assistance, if you are not specialized, instead of your results being downgraded, you are merely -2 to the roll.</p>
+
+  <a name="Identify Magic">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Identify Magic (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes trying to identify the particulars of its magic. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Cursed or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone.</p>
+    <ul>
+      <li><b>Critical Success:</b> You learn all the attributes of the magic, including its name (for an effect), what it does, any means of activating it (for an item or location), and whether it is cursed.</li>
+      <li><b>Success:</b> For an item or location, you get a sense of what it does and learn any means of activating it. For an ongoing effect (such as a spell with a duration), you learn the effect’s name and what it does, and can’t try again until you have access to new information, such as a library of relevant lore.</li>
+      <li><b>Failure:</b> You fail to identify the magic and can’t try again for 1 day.</li>
+      <li><b>Critical Failure:</b> You misidentify the magic as something else of the GM’s choice, and can’t try again until you have access to new information, such as a library of relevant lore. </li>
+    </ul>
+
+  <a name="Investigate">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Investigate (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration</b></li>
+    </ul>
+    <p>You seek out information about your surroundings while traveling at half speed. You use Recall Knowledge as a secret check to discover clues among the various things you can see and engage with as you journey along. You can use any skill that has a Recall Knowledge action while Investigating, but the GM determines whether the skill is relevant to the clues you could find. As with Searching or Detecting Magic, the initial result of Investigating is usually enough to give the investigator a clue that leads into a more thorough examination, but it rarely gives all possible information. For instance, a character might note that the walls of a dungeon are covered with Abyssal writing, but they would need to stop to read the text or determine that it’s written in blood.</p>
+
+  <a name="Repair">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Repair (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Manipulate</b></li>
+      <li><b>Requirements:</b> You have the appropriate repair kit.</li>
+    </ul>
+    <p>You spend time attempting to fix a damaged item, placing the item on a stable surface and using the repair kit with both hands. The GM sets the DC, but it’s usually about the same DC to Repair a given item as it is to Craft it in the first place. You can’t Repair a destroyed item.</p>
+    <ul>
+      <li><b>Critical Success:</b> You restore the item to full hit points, up to a maximum of the amount of damage it has taken since you last used repair on it within the last 24 hours.</li>
+      <li><b>Success:</b> You restore half of the item's hit point total in hit points, up to a maximum of the amount of damage it has taken since you last used repair on it within the last 24 hours.</li>
+      <li><b>Critical Failure:</b> You give the item the broken condition, and cannot attempt to repair it again for 24 hours. Any successful use of the repair activity removes this application of the broken condition.</li>
+    </ul>
+
+  <a name="Search">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Search (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration</b></li>
+    </ul>
+    <p>You Seek meticulously for hidden doors, concealed hazards, and so on. There are three ways you could be searching, each with a different outcome:</p>
+    <ul>
+      <li><b>Educated Guess:</b> You can usually make an educated guess as to which locations are best to check and move at half speed. This will allow you to check for most hidden creatures or objects not normally visible to those not searching. </li>
+      <li><b>Thorough:</b> If you want to be thorough and guarantee you checked everything, you need to travel at a Speed of no more than 300 feet per minute. This will also allow you to check for most secret doors, items, or hazards - but you may not spot them until you have already moved into a dangerous area. </li>
+      <li><b>Extremely Thorough:</b> By searching and traveling no more than 150 feet per minute, you ensure you check everything before you walk into it. </li>
+    </ul>
+    <p>If you come across a secret door, item, or hazard while Searching (at the right level as shown above) the GM will attempt a free secret check to Seek to see if you notice the hidden object or hazard. In locations with many objects to search, you have to stop and spend significantly longer to search thoroughly.</p>
+
+  <a name="Scout">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Scout (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration</b></li>
+    </ul>
+    <p>You scout ahead and behind the group to watch for hidden creatures, moving at half speed. You are considered to be actively seeking during this time, and get +2 to Perception checks. </p>
+
+    <a name="Modern Setting Activities"><h1 style="padding-top: 48px; margin-top: -48px;">Modern Setting Activities</h1></a>
+    <p>These activities are for modern setting games.</p>
+
+  <a name="Avoid System Detection">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Avoid System Detection (3 Actions, contiguous)</h2></a>
+    <ul class="tag">
+      <li><b>Encounter</b></li>
+    </ul>
+    <p>If a system is on alert, you can avoid detection using the Computers skill.</p>
+    <ul>
+      <li><b>Critical Success:</b> You reduce the alert level by 2. </li>
+      <li><b>Success:</b> You reduce the alert level by 1.</li>
+      <li><b>Failure:</b> You increase the alert level by 1.</li>
+      <li><b>Critical Failure:</b> You increase the alert level by 2.</li>
+    </ul>
+    <p>Alert levels in a system:</p>
+    <ul class="sampleDC">
+        <li>Alert level 1: Passive Alert: The system detects that something is wrong, and depending on the system, may alert an admin or try to detect further automatically.</li>
+        <li>Alert level 2: Active Alert: The system detects the intruder, but still must attempt to identify their location to deploy countermeasures. </li>
+        <li>Alert level 3: Deploying Countermeasures: The system has identified and located the intruder, and is actively deploying countermeasures.</li>
+      </ul>
+
+  <a name="Bypass Countermeasures">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Bypass Countermeasures (Reaction)</h2></a>
+    <ul class="tag">
+      <li><b>Reaction</b></li>
+      <li><b>Trigger:</b> You are targeted by a Security system's countermeasures</li>
+    </ul>
+    <p>Whether it's a static trap or an active countermeasure, you can use the Computers skill to avoid the consequences.</p>
+    <ul>
+      <li><b>Critical Success:</b> You avoid the consequences of the countermeasures entirely.</li>
+      <li><b>Success:</b> You stop the countermeasures from targeting you for 1d4 rounds, and may attempt to avoid detection and targeting or completing your infiltration to avoid it entirely.</li>
+      <li><b>Failure:</b> You suffer the consequences of the countermeasure. </li>
+      <li><b>Critical Failure:</b> You suffer the critical consequences of the countermeasure.</li>
+    </ul>
+    <p>Example Countermeasure:</p>
+    <ul class="sampleDC">
+        <li>Tracing Program: This countermeasure attempts to identify and track the intruder</li>
+        <ul>
+            <li>Consequence: The countermeasure detects your location within 1200 feet of accuracy. It identifies your public profile and information. </li>
+            <li>Critical Consequence: The countermeasure detects your location exactly. It identifies your true identity, and infects your computer with tracking virus (must be removed separately as a downtime activity, removed with a special Daemon, or the computer must be destroyed.)</li>
+        </ul>
+    </ul>
+
+  <a name="Configure Explosives">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Configure Explosives (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration</b></li>
+    </ul>
+    <p>You take 10 minutes and use Engineering to configure an explosive device, allowing it to be deployed. Typically this means connecting the explosives to a detonator, but this check could also mean rigging a trip wire or other trap to an explosive.</p>
+    <ul>
+      <li><b>Critical Success:</b> You configure the device properly, and your explosive device is particularly hard to disarm. You get advantage on checks to oppose disarming.</li>
+      <li><b>Success:</b> You configure the device properly. </li>
+      <li><b>Failure:</b> You fail to configure the device, and must try again with another use of this activity.</li>
+      <li><b>Critical Failure:</b> You accidentally trigger the explosives.</li>
+    </ul>
+
+  <a name="Create Electronic Forgery">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Create Electronic Forgery (Downtime)</h2></a>
+    <ul class="tag">
+      <li><b>Downtime, Secret</b></li>
+    </ul>
+    <p>You can use Computers to forge official electronic documents (like official electronic mail, secured document files, or deep fakes) or credentials (like passwords, key cards or biometric data). This process usually takes from a day to a week, and will likely require something to copy or base your work off of. You don't make a check at the time. Instead, whenever someone (or a system) reads the forgery, you make a check versus their Computers or Investigation skill DC.</p>
+    <ul>
+      <li><b>Success:</b> The observer does not detect the forgery.</li>
+      <li><b>Failure:</b> The observer knows your document is a forgery.</li>
+    </ul>    
+
+  <a name="Identify Technology">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Identify Technology (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Concentrate, Exploration, Secret</b></li>
+    </ul>
+    <p>You spend ten minutes using Engineering to identify the properties and uses of technological and hybrid items and devices such as starships and weapons, as well as alien technology. Generally, a check is not required to identify relatively simple technological items that are commonly available.</p>
+    <p>Once you discover that an item, location, or ongoing effect is technological in nature, you can spend 10 minutes to try to identify the particulars of it. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Highly unusual or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone. </p>
+    <ul>
+      <li><b>Critical Success:</b> You learn all the attributes of the technology, including how it works, what it does, any means of activating it (for an item or location), and whether it is functioning properly.</li>
+      <li><b>Success:</b> You get a sense of what it does and learn any means of activating it, and can’t try again until you have access to new information, such as a library of relevant lore.</li>
+      <li><b>Failure:</b> You fail to identify the technology and can’t try again for 1 day.</li>
+      <li><b>Critical Failure:</b> You misidentify the technology as something else of the GM’s choice, and can’t try again until you have access to new information, such as a library of relevant lore.</li>
+    </ul>
+
+  <a name="Infiltrate Secured System">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Infiltrate Secured System (Exploration, possibly Encounter)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration</b></li>
+    </ul>
+    <p>You can use Computers to hack a computer system to which you don’t already have access. This typically is an exploration activity that takes at least 10 minutes (sometimes longer), though by taking a -5 penalty you can attempt to rush the job and get it done in 3 actions (contiguous).</p>
+    <ul>
+      <li><b>Critical Success:</b> You advance two positions in the system. </li>
+      <li><b>Success:</b> You advance one position in the system. </li>
+      <li><b>Failure:</b> You are kicked back one position in the system, and trigger an alert.</li>
+      <li><b>Critical Failure:</b> You are locked out of the system or trigger alarms and countermeasures.</li>
+    </ul>
+    <p>Positions in the system:</p>
+    <ul>
+        <li>Public: No authentication or login.</li>
+        <li>User: Require authentication. Specific access privileges assigned to each user account.</li>
+        <li>Security: Require authentication. (Reading logs, commanding security features, adding/deleting user accounts, altering the data of other users, etc.)</li>
+        <li>Admin: Complete control over the system.</li>
+      </ul>
+
+  <a name="Jury Rig">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Jury Rig (Exploration)</h2></a>
+    <ul class="tag">
+      <li><b>Exploration, Secret</b></li>
+    </ul>
+    <p>You can cause technology to behave in a way it wasn't intended to. Using this action is heavily dependent on GM support and arbitration. They set what is possible, how long it takes, the DC and required components. Typically your jury-rigging allows for one "use" of the item, which could vary in time. For example, jury-rigging a speaker system to emit a high frequency sonic pulse to disrupt the senses of echolocating dire bats may only function once, but jury-rigging a HexDrive to increase its speed for a three day trip may last all three days. </p>
+    <p>Options:</p>
+    <ul class="sampleDC">
+      <li><b>Overclock:</b> You push it beyond its normal maximum limits. Typically this is done to increase the speed, range, or area of an item. </li>
+      <ul>
+        <li>Critical Result: The maximum limit is increased by 50%.</li>
+        <li>Standard Result: The maximum limit is increased by 20%.</li>
+      </ul>
+      <li><b>Modify Function:</b> You modify an aspect of what the item was intended to do, such as adding a new damage type, or changing the type of signal a communication device could send. </li>
+      <ul>
+        <li>Critical Result: The device is modified beyond your expectations, and you can pick one of the following:</li>
+        <ul>
+            <li>It can be used twice in the new way</li>
+            <li>It gets a +2 circumstance bonus to a related roll, or the target gets a -2 to a related roll, when performing its new function.</li>
+            <li>You get a +2 circumstance bonus the next time you attempt this same jury rigging on this device. </li>
+        </ul>
+        <li>Standard Result: The device is modified as you intended, and is modified only for one use (or span of time). </li>
+      </ul>
+      <li><b>One Last Use:</b> You temporarily provide a broken or destroyed device the ability to function normally.</li>
+      <ul>
+        <li>Critical Result: The device functions, and maintains integrity enough to allow you a second roll to attempt using it again.</li>
+        <li>Standard Result: The device functions</li>
+      </ul>
+    </ul>
+    <p>Your roll is a secret check, and typically you don't know the result until you activate and use the item.</p>
+    <ul class="sampleDC">
+        <li>Failure: Your modification breaks the device, requiring you successfully Repair it in order to use it again.</li>
+        <li>Critical Failure: Your modification destroys the device instead.  If the device was a consumable one, a critical failure could mean the device explodes or otherwise causes you damage while you are attempting to jury-rig it. </li>
+    </ul>
+
+  <a name="Navigate Unsecured Computer System">
+    <h2 style="padding-top: 48px; margin-top: -48px;">Navigate Unsecured Computer System (1 Action or More)</h2></a>
+    <ul class="tag">
+      <li><b>Encounter, Secret</b></li>
+    </ul>
+    <p>You use a computer to navigate an unsecured system. If the system is pedestrian, then no roll is required. If it is alien, unfamiliar, particularly advanced or obscure, the GM may call for a check to navigate or to find what you are looking for. The more hidden the file, the longer this activity may take, possibly even making it more of an exploration activity than an encounter one. </p>
+    <ul>
+      <li><b>Critical Success:</b> You find what you are looking for or accomplish your task, with an added benefit - typically saved time or the discovery of something useful or interesting. </li>
+      <li><b>Success:</b> You find what you are looking for or accomplish your task.</li>
+      <li><b>Critical Failure:</b> You not only fail to find what you are looking for or accomplish your task, you trigger an unwanted situation to occur like a system crash or a lockout, or possibly alert someone that you were poking around.</li>
+    </ul>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+{% endblock %}
