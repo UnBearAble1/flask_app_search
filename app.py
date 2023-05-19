@@ -4,7 +4,7 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from datetime import date
-from webforms import SearchForm
+from webforms import SearchForm, ArticleForm
 from flask_ckeditor import CKEditor
 import uuid as uuid
 import os
@@ -12,10 +12,35 @@ import os
 # Create an app, being sure to pass __name__
 app = Flask(__name__)
 
+# Add Databse for articles
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///articles.db"
+
 # Set up secret Key for CRSF
 app.config['SECRET_KEY'] = "testing testing"
 
-# Pass stuff to Navbar
+# initialize the database
+db = SQLAlchemy(app)
+
+# Create db Model
+class Articles(db.Model):
+	title = db.Column(db.String(100), primary_key=True, nullable=False)
+	content = db.Column(db.Text, nullable=False)
+	date_added = db.Column(db.DateTime, default=datetime.utcnow)
+
+	# Create a string
+	def __repr__(self):
+		return '<Name %r>' %self.name
+
+
+
+# Create Article submission Route
+@app.route('/article/add', methods=['GET', 'POST'])
+def add_article():
+	form = ArticleForm()
+	return render_template("add_article.html",
+			form=form)
+
+# Pass things into the Navbar
 @app.context_processor
 def base():
 	form = SearchForm()
