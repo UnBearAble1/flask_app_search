@@ -48,6 +48,13 @@ class ArticleForm(FlaskForm):
 
 
 
+# # Create Article submission Route
+# @app.route('/article/add', methods=['GET', 'POST'])
+# def add_article():
+# 	form = ArticleForm()
+# 	return render_template("add_article.html",
+# 			form=form)
+
 # Create Article submission Route
 @app.route('/article/add', methods=['GET', 'POST'])
 def add_article():
@@ -76,37 +83,37 @@ def add_article():
 			 form=form)
 
 # Pass things into the Navbar
-# @app.context_processor
-# def base():
-# 	form = SearchForm()
-# 	return dict(form=form)
+@app.context_processor
+def base():
+	form = SearchForm()
+	return dict(form=form)
 
 # Create Search Function
-# @app.route('/search', methods=["POST"])
-# def search():
-# 	form = SearchForm()
-# 	artilces = articles.query
-# 	if form.validate_on_submit():
-# 		# Get data from submitted form
-# 		post.searched = form.searched.data
-# 		# Query the Database
-# 		posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
-# 		posts = posts.order_by(Posts.title).all()
+@app.route('/search', methods=["POST"])
+def search():
+	form = SearchForm()
+	posts = Posts.query
+	if form.validate_on_submit():
+		# Get data from submitted form
+		post.searched = form.searched.data
+		# Query the Database
+		posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
+		posts = posts.order_by(Posts.title).all()
 
-# 		return render_template("search.html",
-# 		 form=form,
-# 		 searched = post.searched,
-# 		 posts = posts)
+		return render_template("search.html",
+		 form=form,
+		 searched = post.searched,
+		 posts = posts)
 	
-# # Create a search form
-# class SearchForm(FlaskForm):
-#     searched = StringField("Searched", validators=[DataRequired()])
-#     submit = SubmitField("Submit")
+# Create a search form
+class SearchForm(FlaskForm):
+    searched = StringField("Searched", validators=[DataRequired()])
+    submit = SubmitField("Submit")
 
 # Define what to do when a user goes to the index route
 @app.route("/")
 def Home():
-    return render_template("add_article.html")
+    return render_template("Home.html")
 
 # Define which html page to render a user goes to the each route
 @app.route("/Conditions")
@@ -16969,4 +16976,3 @@ def sacred_defense():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
