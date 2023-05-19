@@ -4,8 +4,12 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from datetime import date
-from webforms import SearchForm, ArticleForm
-from flask_ckeditor import CKEditor
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, ValidationError, TextAreaField
+from wtforms.validators import DataRequired, EqualTo, Length
+from wtforms.widgets import TextArea
+from flask_ckeditor import CKEditorField
+from flask_wtf.file import FileField
 import uuid as uuid
 import os
 
@@ -20,12 +24,23 @@ app.config['SECRET_KEY'] = "testing testing"
 
 # initialize the database
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
-# Create db Model
+# Create Article Model
 class Articles(db.Model):
-	title = db.Column(db.String(100), primary_key=True, nullable=False)
-	content = db.Column(db.Text, nullable=False)
+	id = db.Column(db.Integer, primary_key=True)
+	title = db.Column(db.String(100))
+	content = db.Column(db.Text)
 	date_added = db.Column(db.DateTime, default=datetime.utcnow)
+	slug = db.Column(db.String(100))
+
+# Create Article submission form
+class ArticleForm(FlaskForm):
+	title = StringField()
+	content = StringField()
+	slug = StringField()
+	submit = SubmitField("Submit")
+
 
 	# Create a string
 	def __repr__(self):
@@ -62,6 +77,11 @@ def search():
 		 form=form,
 		 searched = post.searched,
 		 posts = posts)
+	
+# Create a search form
+class SearchForm(FlaskForm):
+    searched = StringField("Searched", validators=[DataRequired()])
+    submit = SubmitField("Submit")
 
 # Define what to do when a user goes to the index route
 @app.route("/")

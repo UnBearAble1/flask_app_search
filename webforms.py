@@ -12,7 +12,9 @@ class SearchForm(FlaskForm):
     searched = StringField("Searched", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
-# Create Articles form
+# Create Article submission form
 class ArticleForm(FlaskForm):
-	title = StringField("Title", validators=[DataRequired()])
-	content = TextAreaField("Content", validators=[DataRequired()])
+	title = StringField()
+	content = StringField()
+	slug = StringField()
+	submit = SubmitField("Submit")
