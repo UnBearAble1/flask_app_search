@@ -36,9 +36,9 @@ class Articles(db.Model):
 
 # Create Article submission form
 class ArticleForm(FlaskForm):
-	title = StringField()
-	content = StringField()
-	slug = StringField()
+	title = StringField("Title", validators=[DataRequired()])
+	content = StringField("Content", validators=[DataRequired()], widget=TextArea())
+	slug = StringField("Slug", validators=[DataRequired()])
 	submit = SubmitField("Submit")
 
 
