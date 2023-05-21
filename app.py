@@ -41,13 +41,6 @@ class ArticleForm(FlaskForm):
 	slug = StringField("Slug", validators=[DataRequired()])
 	submit = SubmitField("Submit")
 
-
-	# Create a string
-	def __repr__(self):
-		return '<Name %r>' %self.name
-
-
-
 # Create Article submission Route
 @app.route('/article/add', methods=['GET', 'POST'])
 def add_article():
